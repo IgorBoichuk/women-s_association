@@ -21,10 +21,12 @@
 	@include mobileBig {
 		background-image: url("../../../assets/img/hero/herobg.png");
 	}
-	@include tablet {
-		justify-content: center;
-	}
+	
 	@include tabletHorizontal {
+		min-height: 768px;
+	}
+	@include desktop {
+		min-height: 910px;
 	}
 }
 

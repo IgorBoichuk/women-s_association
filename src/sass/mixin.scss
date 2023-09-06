@@ -53,8 +53,8 @@
   }
 }
 
-@mixin desctop {
-  @media screen and (max-width: 1440px) {
+@mixin desktop {
+  @media screen and (min-width: 1440px) {
     @content;
   }
 }
@@ -67,11 +67,7 @@
   }
 }
 
-@mixin desktop {
-  @media screen and (min-width: 1440px) {
-    @content;
-  }
-}
+
 
 
 
