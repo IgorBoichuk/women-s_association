@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.containerImage {
+	background-image: url("../../../assets/img/hero/hero-mob-bg.png");
+	height: 460px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    padding: 0px 16px 42px 16px;
+    display: flex;
+    align-items: flex-end;
+    
+}
+
+.title {
+    
+    color: #FBFDFF;
+	font-size: 28px;
+	font-weight: 500;
+	line-height: 120%;
+}
