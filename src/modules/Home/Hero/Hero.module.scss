@@ -34,4 +34,7 @@
 	font-size: 28px;
 	font-weight: 500;
 	line-height: 120%;
+	@include tablet {
+		font-size: 32px;
+	}
 }
