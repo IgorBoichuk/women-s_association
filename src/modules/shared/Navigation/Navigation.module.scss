@@ -1,0 +1,25 @@
+@import "../../../sass/mixin.scss";
+@import "../../../sass/variables.scss";
+
+.navList {
+  list-style: none;
+  display: none;
+  gap: 40px;
+
+  @include tabletHorizontal {
+    display: flex;
+  }
+}
+
+.navItem {
+  padding: 12px 4px 12px 4px;
+  border-bottom: 2px solid transparent;
+  &:hover {
+    border-bottom: 2px solid black;
+    // outline: 2px solid black;
+  }
+}
+
+.navLink {
+  text-decoration: none;
+}

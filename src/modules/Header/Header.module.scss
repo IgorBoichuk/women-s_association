@@ -1,0 +1,48 @@
+@import "../../sass/mixin.scss";
+@import "../../sass/variables.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+
+  @include mobileBig {
+  }
+
+  @include tabletHorizontal {
+  }
+  @include desktop {
+  }
+}
+
+.logoRapper {
+}
+
+.logo {
+  display: block;
+}
+
+.navMenu {
+}
+
+.button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background-color: $gold;
+  &:hover {
+    background-color: $blue;
+    color: $white;
+  }
+}
+
+.burgerBtn {
+  border: none;
+  background-color: transparent;
+}
+
+.menuBtn {
+  fill: $black;
+  display: block;
+}
