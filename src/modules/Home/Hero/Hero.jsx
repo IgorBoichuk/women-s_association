@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 import classes from "./Hero.module.scss";
 const Hero = () => {
-  return (
+	return (
 		<div className={classes.container}>
 			<div className={classes.containerImage}>
 				<h3 className={classes.title}>
@@ -10,6 +10,6 @@ const Hero = () => {
 			</div>
 		</div>
 	);
-}
+};
 
-export default Hero
+export default Hero;
