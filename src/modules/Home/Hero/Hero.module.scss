@@ -1,43 +1,130 @@
 @import "../../../sass/mixin.scss";
+@import "../../../sass/variables.scss";
 
 .container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	gap: 16px;
 }
 
 .containerImage {
-	background-image: url("../../../assets/img/hero/hero-mob-bg.png");
+	background-image: url("../../../assets/img/hero/herobg.png");
 	width: 100%;
 	height: 460px;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	padding: 0px 16px 42px 16px;
-	display: flex;
-	align-items: flex-end;
-	justify-content: flex-start;
 
-	@include mobileBig {
-		background-image: url("../../../assets/img/hero/herobg.png");
+	padding: 48px 116px 96px 24px;
+
+	@include tablet {
+		background: linear-gradient(
+				90deg,
+				rgba(31, 31, 31, 0.85) 38.67%,
+				rgba(31, 31, 31, 0) 100%
+			),
+			url("../../../assets/img/hero/herobg.png"), lightgray 50%;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		min-height: 410px;
 	}
-	
 	@include tabletHorizontal {
-		min-height: 768px;
+		min-height: 399px;
+		padding: 74px 196px 51px 32px;
 	}
 	@include desktop {
 		min-height: 910px;
+		padding: 144px 288px 130px 80px;
+	}
+	@include desktopWide {
+		padding: 215px 698px 198px 80px;
+	}
+}
+.textWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 100%;
+
+	margin-bottom: 32px;
+
+	@include desktop {
+		gap: 24px;
+		margin-bottom: 60px;
 	}
 }
 
 .titleTablet {
 	display: none;
-	color: #fbfdff;
-	font-size: 28px;
+	color: $white;
+	font-size: 36px;
 	font-weight: 500;
 	line-height: 120%;
+
 	@include tablet {
-		font-size: 32px;
 		display: inline-block;
+	}
+	@include tabletHorizontal {
+		font-size: 46px;
+	}
+	@include desktop {
+		font-size: 80px;
+		font-weight: 700;
+		line-height: 120%;
+	}
+}
+
+.titleDescriptionTablet {
+	display: none;
+	color: $gray_light;
+	font-size: 20px;
+
+	line-height: 150%;
+
+	@include tablet {
+		display: inline;
+	}
+	@include desktop {
+		font-size: 40px;
+		line-height: 120%;
+	}
+}
+
+.mobWrapper {
+	display: block;
+	@include tablet {
+		display: none;
+	}
+}
+
+.titleSeparate {
+	color: $black;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 120%;
+	margin-bottom: 26px;
+}
+.titleDescription {
+	color: $black;
+	font-size: 20px;
+	font-style: normal;
+	line-height: 150%;
+	margin-bottom: 34px;
+}
+.buttonContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.buttonContainerTablet {
+	display: none;
+	gap: 24px;
+
+	@include tablet {
+		display: flex;
 	}
 }
