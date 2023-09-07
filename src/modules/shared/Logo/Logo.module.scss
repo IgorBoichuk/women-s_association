@@ -8,6 +8,14 @@
 
 .logo {
   display: block;
+  width: 42px;
+  height: 42px;
+}
+
+.logoFooter {
+  display: block;
+  width: 80px;
+  height: 80px;
 }
 
 .logoText {
@@ -35,5 +43,25 @@
     }
   }
   @include desktop {
+  }
+}
+
+.logoTextFooter {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  font-family: Mariupol;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%; /* 30px */
+  color: $blue;
+  &::before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 50px;
+    border: 1px solid $blue;
+    margin-left: 16px;
+    margin-right: 16px;
   }
 }
