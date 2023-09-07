@@ -1,0 +1,52 @@
+@import "../../sass/mixin.scss";
+@import "../../sass/variables.scss";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.contactsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contacts {
+  font-family: Mariupol;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+  color: $black;
+}
+
+.adress {
+  font-family: Mariupol;
+  font-size: 16px;
+  line-height: 150%; /* 24px */
+  color: $black;
+}
+
+.email {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+
+  font-family: Mariupol;
+  font-size: 16px;
+  line-height: 150%; /* 24px */
+  color: $black;
+}
+
+.emailIcon {
+  fill: $black;
+}
+
+.social {
+}
+
+.socialIcon {
+  fill: $blue;
+}
