@@ -1,16 +1,24 @@
-.mainContainer {
-	padding-right: 16px;
-    padding-left: 16px;
-}
+@import "../../../sass/mixin.scss";
+@import "../../../sass/variables.scss";
 .container {
-    border: 1px solid red;
-    padding-right: 16px;
-    padding-left: 16px;
+	
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
 }
+
 .title {
-	color: #1f1f1f;
-	font-size: 24px;
+	color: $black;
+	font-size: 28px;
 	font-weight: 500;
 	line-height: 120%;
 	text-align: center;
+}
+.textWrapper {
+	border:  1px solid $gold;
+	padding: 24px 16px;
+}
+.newContainer {
+	border: 1px solid red;
+	padding-bottom: 50px;
 }
