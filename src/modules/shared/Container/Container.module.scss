@@ -1,0 +1,18 @@
+@import "../../../sass/mixin.scss";
+@import "../../../sass/variables.scss";
+
+.container {
+  padding: 0 16px;
+
+  @include tablet {
+    padding: 0 24px;
+  }
+
+  @include tabletHorizontal {
+    // padding: 0 40px;
+  }
+
+  @include desktop {
+    padding: 0 80px;
+  }
+}
