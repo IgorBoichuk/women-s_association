@@ -5,8 +5,9 @@
 .header {
   display: flex;
   justify-content: space-between;
+
   align-items: center;
-  padding: 10px 0;
+  padding: 10px 16px;
 
   @include mobileBig {
   }
@@ -17,14 +18,11 @@
   }
 }
 
-.logoRapper {
-}
-
-.logo {
-  display: block;
-}
-
 .navMenu {
+  display: none;
+  @include tabletHorizontal {
+    display: block;
+  }
 }
 
 .button {
@@ -41,6 +39,9 @@
 .burgerBtn {
   border: none;
   background-color: transparent;
+  @include tabletHorizontal {
+    display: none;
+  }
 }
 
 .menuBtn {

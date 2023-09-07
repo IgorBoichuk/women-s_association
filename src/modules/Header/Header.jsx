@@ -2,15 +2,13 @@ import React from "react";
 import style from "./Header.module.scss";
 import sprite from "../../assets/svg/sprite.svg";
 import { Navigation } from "../shared/Navigation/Navigation";
+import { Logo } from "../shared/Logo/Logo";
+import { LanguageSwitcher } from "../shared/LanguageSwitcher/LanguageSwitcher";
 
 export const Header = () => {
   return (
     <header className={style.header}>
-      <div className={style.logoRapper}>
-        <svg className={style.logo} width="42" height="42">
-          <use xlinkHref={`${sprite}#logo`}></use>
-        </svg>
-      </div>
+      <Logo />
       <nav className={style.navMenu}>
         <Navigation />
       </nav>
@@ -20,6 +18,7 @@ export const Header = () => {
           <use xlinkHref={`${sprite}#menu`}></use>
         </svg>
       </button>
+      <LanguageSwitcher />
     </header>
   );
 };

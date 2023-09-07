@@ -1,0 +1,16 @@
+@import "../../../sass/mixin.scss";
+@import "../../../sass/variables.scss";
+
+.langWrapper {
+  display: none;
+  @include tabletHorizontal {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.langUa {
+}
+
+.langEng {
+}
