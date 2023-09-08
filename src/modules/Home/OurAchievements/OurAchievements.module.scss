@@ -1,7 +1,6 @@
 @import "../../../sass/mixin.scss";
 @import "../../../sass/variables.scss";
 .container {
-	
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
@@ -15,10 +14,18 @@
 	text-align: center;
 }
 .textWrapper {
-	border:  1px solid $gold;
-	padding: 24px 16px;
+	border: 2px solid $gold;
+	border-radius: 8px;
+	padding: 16px 24px;
+	
+
+
 }
-.newContainer {
-	// border: 1px solid red;
-	padding-bottom: 50px;
+
+.paginationWrapper {
+	
+	padding-bottom: 40px;
+
+
 }
+
