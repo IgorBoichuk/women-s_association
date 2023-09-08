@@ -11,16 +11,29 @@
 }
 
 .containerImage {
-	background-image: url("../../../assets/img/hero/herobg.png");
+	background-image: url("../../../assets/img/hero/herobgMob.png");
 	width: 100%;
-	height: 460px;
+	height: 428px;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 
 	padding: 48px 116px 96px 24px;
 
+	@include mobileBig {
+		background: linear-gradient(
+				0deg,
+				rgba(0, 0, 0, 0.45) 0%,
+				rgba(0, 0, 0, 0.45) 100%
+			),
+			url("../../../assets/img/hero/herobg.png"),
+			lightgray -393.124px -1px / 303.297% 114.486% no-repeat;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 	@include tablet {
+		min-height: 410px;
 		background: linear-gradient(
 				90deg,
 				rgba(31, 31, 31, 0.85) 38.67%,
@@ -30,7 +43,6 @@
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		min-height: 410px;
 	}
 	@include tabletHorizontal {
 		min-height: 399px;
