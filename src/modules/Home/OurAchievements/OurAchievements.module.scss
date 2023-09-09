@@ -28,7 +28,16 @@
 }
 
 .contentWrapper {
-	border: 1px solid orange;
-	margin-bottom: 44px;
+	border-radius: 8px;
+border: 2px solid $gold;
+background: $white;
+
+box-shadow: 4px 4px 25px 0px rgba(0, 92, 169, 0.10);
+// margin-bottom: 44px;
+
+
 }
 
+.swiper {
+	margin-right: 24px;
+}

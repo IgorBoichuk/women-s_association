@@ -22,13 +22,27 @@ const OurAchievements = () => {
 								prevEl: ".swiper-button-prev",
 							}}
 							modules={[Navigation]}
-							className='mySwiper'>
-							<SwiperSlide>
+							className='mySwiper'
+							slidesPerView={2}
+							slidesPerGroup={2}>
+							<SwiperSlide className={style.swiper}>
 								<div className={style.contentWrapper}>Slide 1</div>
 							</SwiperSlide>
-							<SwiperSlide>Slide 2</SwiperSlide>
-							<SwiperSlide>Slide 3</SwiperSlide>
-							<SwiperSlide>Slide 4</SwiperSlide>
+							<SwiperSlide className={style.swiper}>
+								<div className={style.contentWrapper}>Slide 2</div>
+							</SwiperSlide>
+							<SwiperSlide className={style.swiper}>
+								<div className={style.contentWrapper}>Slide 3</div>
+							</SwiperSlide>
+							<SwiperSlide className={style.swiper}>
+								<div className={style.contentWrapper}>Slide 4</div>
+							</SwiperSlide>
+							<SwiperSlide className={style.swiper}>
+								<div className={style.contentWrapper}>Slide 5</div>
+							</SwiperSlide>
+							<SwiperSlide className={style.swiper}>
+								<div className={style.contentWrapper}>Slide 6</div>
+							</SwiperSlide>
 						</Swiper>
 
 						<div className='swiper-button-next'>
