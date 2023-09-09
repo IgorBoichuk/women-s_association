@@ -1,0 +1,21 @@
+@import "../../../../sass/mixin.scss";
+@import "../../../../sass/variables.scss";
+.swiperMobile {
+	@include tablet {
+		display: none;
+	}
+}
+.paginationWrapper {
+margin-bottom: 64px;
+}
+
+.textWrapper {
+	border: 1px solid $gold;
+	border-radius: 8px;
+	padding: 16px 24px;
+	@include mobileBig {
+		border: 2px solid $gold;
+	}
+
+
+}
