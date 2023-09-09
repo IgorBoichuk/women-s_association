@@ -23,7 +23,9 @@ const OurAchievements = () => {
 							}}
 							modules={[Navigation]}
 							className='mySwiper'>
-							<SwiperSlide>Slide 1</SwiperSlide>
+							<SwiperSlide>
+								<div className={style.contentWrapper}>Slide 1</div>
+							</SwiperSlide>
 							<SwiperSlide>Slide 2</SwiperSlide>
 							<SwiperSlide>Slide 3</SwiperSlide>
 							<SwiperSlide>Slide 4</SwiperSlide>
