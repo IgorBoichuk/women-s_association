@@ -20,7 +20,7 @@ const TabletSlider = () => {
 		};
   return (
 		<div className={style.sliderContainer}>
-			<div className='mainWrapperForSlider'>
+			<div className='mainWrapperForTabletSlider'>
 				<Swiper
 					navigation={{
 						nextEl: ".swiper-button-next",

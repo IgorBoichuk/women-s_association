@@ -9,8 +9,8 @@ const OurAchievements = () => {
 	
 	return (
 		<Container>
-			<section className={style.container}>
-				<h3 className={style.title}>Наші досягнення</h3>
+			<section >
+				<h2 className={style.title}>Наші досягнення</h2>
 				<MobileSlider />
 				<TabletSlider />
 				<DesktopTable />
