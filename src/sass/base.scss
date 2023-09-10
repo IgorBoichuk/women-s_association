@@ -71,6 +71,9 @@ select {
 		scroll-behavior: auto !important;
 	}
 }
+.mySwiper {
+	height: 100%;
+}
 
 .swiper {
 	width: 100%;
@@ -119,4 +122,5 @@ select {
 }
 .mainWrapperForSlider {
 	position: relative;
+	height: 100%;
 }

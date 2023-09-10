@@ -25,25 +25,69 @@ const OurAchievements = () => {
 							className='mySwiper'
 							slidesPerView={2}
 							slidesPerGroup={2}
-							spaceBetween={24}
-							>
+							spaceBetween={24}>
 							<SwiperSlide className={style.swiper}>
-								<div className={style.contentWrapper}>Slide 1</div>
+								<div className={style.contentWrapper}>
+									<p className={style.content}>
+										Увійшли до книги рекордів України, як організація, яка
+										допомогла відзначити державними нагородами за один захід
+										найбільшу кількість матерів загиблих військових (350 батьків
+										Героїв отримали відзнаку «Знак пошани» та іменну «Подяку»,і
+										100 матерів медалі «Честь.Слава.Держава»)
+									</p>
+								</div>
 							</SwiperSlide>
 							<SwiperSlide className={style.swiper}>
-								<div className={style.contentWrapper}>Slide 2</div>
+								<div className={style.contentWrapper}>
+									<p className={style.content}>
+										Результатом відкритого заходу «Час не лікує» в 2019 році було
+										створення комісії Верховної Ради з розслідування обставин
+										загибелі українських добровольців в Іловайському котлі в 2014
+										році
+									</p>
+								</div>
 							</SwiperSlide>
 							<SwiperSlide className={style.swiper}>
-								<div className={style.contentWrapper}>Slide 3</div>
+								<div className={style.contentWrapper}>
+									<p className={style.content}>
+										2. Увійшли до книги рекордів України, як організація, яка
+										допомогла відзначити державними нагородами за один захід
+										найбільшу кількість матерів загиблих військових (350 батьків
+										Героїв отримали відзнаку «Знак пошани» та іменну «Подяку»,і
+										100 матерів медалі «Честь.Слава.Держава»)
+									</p>
+								</div>
 							</SwiperSlide>
 							<SwiperSlide className={style.swiper}>
-								<div className={style.contentWrapper}>Slide 4</div>
+								<div className={style.contentWrapper}>
+									<p className={style.content}>
+										2. Результатом відкритого заходу «Час не лікує» в 2019 році
+										було створення комісії Верховної Ради з розслідування обставин
+										загибелі українських добровольців в Іловайському котлі в 2014
+										році
+									</p>
+								</div>
 							</SwiperSlide>
 							<SwiperSlide className={style.swiper}>
-								<div className={style.contentWrapper}>Slide 5</div>
+								<div className={style.contentWrapper}>
+									<p className={style.content}>
+										3. Увійшли до книги рекордів України, як організація, яка
+										допомогла відзначити державними нагородами за один захід
+										найбільшу кількість матерів загиблих військових (350 батьків
+										Героїв отримали відзнаку «Знак пошани» та іменну «Подяку»,і
+										100 матерів медалі «Честь.Слава.Держава»)
+									</p>
+								</div>
 							</SwiperSlide>
 							<SwiperSlide className={style.swiper}>
-								<div className={style.contentWrapper}>Slide 6</div>
+								<div className={style.contentWrapper}>
+									<p className={style.content}>
+										3. Результатом відкритого заходу «Час не лікує» в 2019 році
+										було створення комісії Верховної Ради з розслідування обставин
+										загибелі українських добровольців в Іловайському котлі в 2014
+										році
+									</p>
+								</div>
 							</SwiperSlide>
 						</Swiper>
 

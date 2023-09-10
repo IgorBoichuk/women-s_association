@@ -1,11 +1,10 @@
 @import "../../../sass/mixin.scss";
 @import "../../../sass/variables.scss";
 .container {
-	
 	border: 1px solid red;
+	
 
 	@include tablet {
-		
 	}
 }
 
@@ -19,25 +18,30 @@
 	margin-bottom: 40px;
 }
 
-
 .sliderContainer {
 	display: none;
+	height: 100%;
 	@include tablet {
 		display: block;
 	}
 }
 
+.swiper {
+	height: 100%;
+}
+
 .contentWrapper {
 	border-radius: 8px;
-border: 2px solid $gold;
-background: $white;
+	border: 2px solid $gold;
+	background: $white;
 
-box-shadow: 4px 4px 25px 0px rgba(0, 92, 169, 0.10);
-// margin-bottom: 44px;
-
-
+	box-shadow: 4px 4px 25px 0px rgba(0, 92, 169, 0.1);
+	// margin-bottom: 44px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 24px 16px;
+	height: 100%;
 }
 
-.swiper {
-	
-}
+
