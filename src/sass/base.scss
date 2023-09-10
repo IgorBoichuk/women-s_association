@@ -106,6 +106,9 @@ select {
 	@include tablet {
 		top: 27em !important;
 	}
+	@include tabletHorizontal {
+		top: 13em !important;
+	}
 	svg {
 		width: 100%;
 		height: 100%;
@@ -124,9 +127,15 @@ select {
 }
 .swiper-button-next {
 	right: 43% !important;
+	@include tabletHorizontal {
+		right: -1% !important;
+	}
 }
 .swiper-button-prev {
 	left: 43% !important;
+	@include tabletHorizontal {
+		left: -1% !important;
+	}
 }
 .mainWrapperForSlider {
 	position: relative;
