@@ -8,7 +8,7 @@ import { LanguageSwitcher } from "../shared/LanguageSwitcher/LanguageSwitcher";
 
 export const Header = () => {
   return (
-    <Container>
+    <Container mb0={true}>
       <header className={style.header}>
         <Logo />
         <nav className={style.navMenu}>
