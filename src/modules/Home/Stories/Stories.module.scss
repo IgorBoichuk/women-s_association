@@ -1,7 +1,9 @@
 @import "../../../sass/mixin.scss";
 @import "../../../sass/variables.scss";
 
-
+.section {
+	border: 1px solid red;
+}
 .title {
 	color: $black;
 	font-size: 24px;

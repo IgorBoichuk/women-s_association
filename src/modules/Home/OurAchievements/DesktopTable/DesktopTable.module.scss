@@ -7,19 +7,17 @@
 	flex-wrap: wrap;
 	align-items: stretch; 
 	justify-content: space-between; 
+	row-gap: 24px;
 	}
 }
 
 .achievementEl {
-	flex-basis: calc(33.33% - 20px); /* Ширина элемента (33.33% минус отступ) */
 	max-width: calc(33.33% - 20px);
 	overflow: hidden;
-	margin-right: 20px; /* Отступ между элементами */
-	margin-bottom: 20px; /* Отступ между рядами */
 	border-radius: 8px;
 	background: $white;
 	box-shadow: 4px 4px 25px 0px rgba(0, 92, 169, 0.1);
-	padding: 20px 40px; /* Добавьте отступы внутри элементов */
+	padding: 20px 40px; 
 	min-height: 328px;
 	max-height: 100%;
 

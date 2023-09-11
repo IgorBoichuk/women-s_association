@@ -17,7 +17,7 @@ const Stories = () => {
     }
 	return (
 		<Container>
-			<section>
+			<section className={style.section}>
 				<h2 className={style.title}>Історії, які надихають</h2>
 				<div className={style.swiperMobile}>
 					<Swiper

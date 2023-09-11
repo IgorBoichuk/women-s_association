@@ -3,7 +3,7 @@
 
 .section {
 	max-height: 405px;
-	border: 1px solid red;
+	
 	@include tablet {
 		min-height: 473px;
 		
