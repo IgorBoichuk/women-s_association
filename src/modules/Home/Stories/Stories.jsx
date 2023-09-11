@@ -4,7 +4,7 @@ import "swiper/css/pagination";
 import "../../../index.scss";
 import style from "./Stories.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import { Container } from "../../shared/Container/Container";
 import sprite from "../../../assets/svg/sprite.svg"
 const Stories = () => {
@@ -21,10 +21,14 @@ const Stories = () => {
 				<h2 className={style.title}>Історії, які надихають</h2>
 				<div className={style.swiperMobile}>
 					<Swiper
+						navigation={{
+							nextEl: ".swiper-button-next1",
+							prevEl: ".swiper-button-prev2",
+						}}
 						pagination={true}
 						breakpoints={breakpoints}
-						modules={[Pagination]}
-						className='mySwiper'>
+						modules={[Pagination, Navigation]}
+						className='myStorySwiper'>
 						<SwiperSlide>
 							{" "}
 							<div className={style.paginationWrapper}>

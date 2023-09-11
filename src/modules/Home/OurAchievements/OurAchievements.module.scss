@@ -1,6 +1,17 @@
 @import "../../../sass/mixin.scss";
 @import "../../../sass/variables.scss";
 
+.section {
+	max-height: 405px;
+	border: 1px solid red;
+	@include tablet {
+		min-height: 473px;
+		
+	}
+	@include desktop {
+		max-height: 100%;
+	}
+}
 .title {
 	color: $black;
 	font-size: 28px;
@@ -9,5 +20,8 @@
 	text-align: center;
 
 	margin-bottom: 40px;
+	@include desktop {
+		font-size: 46px;
+		margin-bottom: 80px;
+	}
 }
-

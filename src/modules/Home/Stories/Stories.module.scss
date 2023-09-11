@@ -1,6 +1,7 @@
 @import "../../../sass/mixin.scss";
 @import "../../../sass/variables.scss";
 
+
 .title {
 	color: $black;
 	font-size: 24px;
@@ -10,11 +11,7 @@
 
 	margin-bottom: 40px;
 }
-.swiperMobile {
-	// @include tablet {
-	// 	display: none;
-	// }
-}
+
 .paginationWrapper {
 	margin-bottom: 64px;
 }
@@ -33,10 +30,10 @@
 	background-position-y: inherit;
 	max-height: 100%;
 	width: 100%;
-	min-height: 10em;
+	min-height: 159px;
 	max-height: 100%;
 	@include mobileBig {
-		min-height: 18em;
+		min-height: 288px;
 		
 	}
 }
@@ -86,7 +83,7 @@
 	height: 24px;
 	width: 24px;
 	fill: $gray_dark;
-	  animation: rotate 20s linear infinite; /* Имя анимации, продолжительность, тип и бесконечное воспроизведение */
+	  animation: rotate 15s linear infinite; /* Имя анимации, продолжительность, тип и бесконечное воспроизведение */
 
 }
 
