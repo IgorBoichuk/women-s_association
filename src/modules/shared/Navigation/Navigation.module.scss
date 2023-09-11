@@ -3,11 +3,27 @@
 
 .navList {
   list-style: none;
-  // display: none;
   gap: 40px;
+
+  font-family: Mariupol;
+  font-size: 20px;
+  line-height: 150%; /* 30px */
 
   @include tabletHorizontal {
     display: flex;
+  }
+}
+
+.navListFooter {
+  list-style: none;
+
+  font-family: Mariupol;
+  font-size: 20px;
+  line-height: 150%; /* 30px */
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -22,4 +38,5 @@
 
 .navLink {
   text-decoration: none;
+  color: $black;
 }

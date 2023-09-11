@@ -5,12 +5,15 @@ import { Navigation } from "../shared/Navigation/Navigation";
 import { Logo } from "../shared/Logo/Logo";
 import { Container } from "../shared/Container/Container";
 import { LanguageSwitcher } from "../shared/LanguageSwitcher/LanguageSwitcher";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
     <Container mb0={true}>
       <header className={style.header}>
-        <Logo />
+        <Link to="/" className={style.headerLink}>
+          <Logo />
+        </Link>
         <nav className={style.navMenu}>
           <Navigation />
         </nav>

@@ -1,7 +1,6 @@
 @import "../../sass/mixin.scss";
 @import "../../sass/variables.scss";
 
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -16,6 +15,10 @@
   }
   @include desktop {
   }
+}
+
+.headerLink {
+  text-decoration: none;
 }
 
 .navMenu {
