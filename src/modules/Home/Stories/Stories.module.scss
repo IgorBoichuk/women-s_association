@@ -23,6 +23,9 @@
 	text-align: center;
 
 	margin-bottom: 40px;
+	@include tablet {
+		font-size: 28px;
+	}
 }
 
 .paginationWrapper {
