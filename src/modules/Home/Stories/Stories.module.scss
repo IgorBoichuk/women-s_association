@@ -15,6 +15,9 @@
 		padding-bottom: 0px;
 	}
 }
+.paginationWrapper {
+margin-bottom: 54px;
+}
 .title {
 	color: $black;
 	font-size: 24px;
@@ -28,9 +31,7 @@
 	}
 }
 
-.paginationWrapper {
-margin-bottom: 54px;
-}
+
 
 
 .photo {
@@ -53,8 +54,10 @@ margin-bottom: 54px;
 	max-height: 239px;
 	border-radius: 0px 0px 20px 20px;
 	background-color: $gray_light;
-
-	flex-grow: 1;
+@include tablet {
+	max-height: 333px;
+}
+	
 	
 
 	padding: 24px 16px;
