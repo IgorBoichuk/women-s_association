@@ -2,8 +2,8 @@
 @import "../../../sass/variables.scss";
 
 .section {
-	border: 1px solid red;
-	min-height: 507px;
+	
+	max-height: 100vh;
 	max-height: 507px;
 	padding-bottom: 40px;
 	@include mobileBig {
@@ -14,9 +14,16 @@
 		max-height: 743px;
 		padding-bottom: 0px;
 	}
+	@include desktop {
+		min-height: 839px;
+		max-height: 839px;
+	}
 }
 .paginationWrapper {
-margin-bottom: 54px;
+	margin-bottom: 54px;
+	@include tablet {
+		margin-bottom: 64px;
+	}
 }
 .title {
 	color: $black;
@@ -29,10 +36,11 @@ margin-bottom: 54px;
 	@include tablet {
 		font-size: 28px;
 	}
+	@include desktop {
+		font-size: 46px;
+		margin-bottom: 80px;
+	}
 }
-
-
-
 
 .photo {
 	border-radius: 20px 20px 0px 0px;
@@ -45,24 +53,29 @@ margin-bottom: 54px;
 	max-height: 100%;
 	@include mobileBig {
 		min-height: 288px;
-		
+	}
+	@include desktop {
+		min-height: 280px;
 	}
 }
 
 .storyWrapper {
+	display: flex;
+	flex-direction: column;
 	text-align: left;
 	max-height: 239px;
 	border-radius: 0px 0px 20px 20px;
 	background-color: $gray_light;
-@include tablet {
-	max-height: 333px;
-}
-	
-	
-
 	padding: 24px 16px;
-	display: flex;
-	flex-direction: column;
+	@include tablet {
+		max-height: 333px;
+		padding: 24px 24px 40px 24px;
+	}
+@include desktop {
+	max-height: 424px;
+}
+
+	
 }
 
 .storyTitle {
@@ -72,6 +85,9 @@ margin-bottom: 54px;
 	font-style: normal;
 	line-height: 150%; /* 30px */
 	margin-bottom: 12px;
+	@include tablet {
+		font-size: 24px;
+	}
 }
 
 .storyText {
@@ -79,6 +95,9 @@ margin-bottom: 54px;
 	font-size: 16px;
 	line-height: 150%;
 	margin-bottom: 16px;
+	@include tablet {
+		font-size: 20px;
+	}
 }
 
 .iconWrapper {
@@ -90,6 +109,13 @@ margin-bottom: 54px;
 		color: $black;
 		font-size: 14px;
 		line-height: 150%;
+		@include tablet {
+			font-size: 20px;
+		}
+	}
+
+	@include desktop {
+		margin-bottom: 32px;
 	}
 }
 
@@ -97,17 +123,21 @@ margin-bottom: 54px;
 	height: 24px;
 	width: 24px;
 	fill: $gray_dark;
-	  animation: rotate 15s linear infinite; /* Имя анимации, продолжительность, тип и бесконечное воспроизведение */
-
+	animation: rotate 15s linear infinite; /* Имя анимации, продолжительность, тип и бесконечное воспроизведение */
 }
-
 
 @keyframes rotate {
-  0% {
-    transform: rotate(0deg); /* Начальное положение (0 градусов) */
-  }
-  100% {
-    transform: rotate(360deg); /* Конечное положение (360 градусов) */
-  }
+	0% {
+		transform: rotate(0deg); /* Начальное положение (0 градусов) */
+	}
+	100% {
+		transform: rotate(360deg); /* Конечное положение (360 градусов) */
+	}
 }
 
+.desktopWrapper {
+	display: none;
+	@include desktop {
+		display: block;
+	}
+}

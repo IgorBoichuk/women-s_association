@@ -8,11 +8,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Container } from "../../shared/Container/Container";
 import sprite from "../../../assets/svg/sprite.svg";
+import ButtonMain from "../../shared/ButtonMain/ButtonMain";
 const Stories = () => {
 	const breakpoints = {
 		768: {
 			slidesPerView: 2,
 			slidesPerGroup: 2,
+			spaceBetween: 24,
+		},
+		1024: {
+			slidesPerView: 3,
+			slidesPerGroup: 3,
 			spaceBetween: 24,
 		},
 	};
@@ -51,27 +57,8 @@ const Stories = () => {
 											</svg>
 											<span>5 хвилин</span>
 										</div>
-									</div>
-								</div>
-							</SwiperSlide>
-							<SwiperSlide>
-								<div className={style.paginationWrapper}>
-									<div className={style.photo}></div>
-									<div className={style.storyWrapper}>
-										<h3 className={style.storyTitle}>
-											Малі дії, Великі зміни{" "}
-										</h3>
-										<p className={style.storyText}>
-											Деякі невеликі дії можуть породити неймовірні зміни, і ця
-											історія показує, як спільнота з'єдналася для створення
-											позитивного впливу на світ навколо.
-										</p>
-
-										<div className={style.iconWrapper}>
-											<svg className={style.clockIcon}>
-												<use xlinkHref={`${sprite}#icon-time`}></use>
-											</svg>
-											<span>5 хвилин</span>
+										<div className={style.desktopWrapper}>
+											<ButtonMain maxW={"max-content"}>Детальніше</ButtonMain>
 										</div>
 									</div>
 								</div>
@@ -95,27 +82,8 @@ const Stories = () => {
 											</svg>
 											<span>5 хвилин</span>
 										</div>
-									</div>
-								</div>
-							</SwiperSlide>
-							<SwiperSlide>
-								<div className={style.paginationWrapper}>
-									<div className={style.photo}></div>
-									<div className={style.storyWrapper}>
-										<h3 className={style.storyTitle}>
-											Малі дії, Великі зміни{" "}
-										</h3>
-										<p className={style.storyText}>
-											Деякі невеликі дії можуть породити неймовірні зміни, і ця
-											історія показує, як спільнота з'єдналася для створення
-											позитивного впливу на світ навколо.
-										</p>
-
-										<div className={style.iconWrapper}>
-											<svg className={style.clockIcon}>
-												<use xlinkHref={`${sprite}#icon-time`}></use>
-											</svg>
-											<span>5 хвилин</span>
+										<div className={style.desktopWrapper}>
+											<ButtonMain maxW={"max-content"}>Детальніше</ButtonMain>
 										</div>
 									</div>
 								</div>
@@ -138,6 +106,59 @@ const Stories = () => {
 												<use xlinkHref={`${sprite}#icon-time`}></use>
 											</svg>
 											<span>5 хвилин</span>
+										</div>
+										<div className={style.desktopWrapper}>
+											<ButtonMain maxW={"max-content"}>Детальніше</ButtonMain>
+										</div>
+									</div>
+								</div>
+							</SwiperSlide>
+							<SwiperSlide>
+								<div className={style.paginationWrapper}>
+									<div className={style.photo}></div>
+									<div className={style.storyWrapper}>
+										<h3 className={style.storyTitle}>
+											Малі дії, Великі зміни{" "}
+										</h3>
+										<p className={style.storyText}>
+											Деякі невеликі дії можуть породити неймовірні зміни, і ця
+											історія показує, як спільнота з'єдналася для створення
+											позитивного впливу на світ навколо.
+										</p>
+
+										<div className={style.iconWrapper}>
+											<svg className={style.clockIcon}>
+												<use xlinkHref={`${sprite}#icon-time`}></use>
+											</svg>
+											<span>5 хвилин</span>
+										</div>
+										<div className={style.desktopWrapper}>
+											<ButtonMain maxW={"max-content"}>Детальніше</ButtonMain>
+										</div>
+									</div>
+								</div>
+							</SwiperSlide>
+							<SwiperSlide>
+								<div className={style.paginationWrapper}>
+									<div className={style.photo}></div>
+									<div className={style.storyWrapper}>
+										<h3 className={style.storyTitle}>
+											Малі дії, Великі зміни{" "}
+										</h3>
+										<p className={style.storyText}>
+											Деякі невеликі дії можуть породити неймовірні зміни, і ця
+											історія показує, як спільнота з'єдналася для створення
+											позитивного впливу на світ навколо.
+										</p>
+
+										<div className={style.iconWrapper}>
+											<svg className={style.clockIcon}>
+												<use xlinkHref={`${sprite}#icon-time`}></use>
+											</svg>
+											<span>5 хвилин</span>
+										</div>
+										<div className={style.desktopWrapper}>
+											<ButtonMain maxW={"max-content"}>Детальніше</ButtonMain>
 										</div>
 									</div>
 								</div>
