@@ -2,9 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import style from "./Navigation.module.scss";
 
-export const Navigation = () => {
+export const Navigation = ({ footer }) => {
   return (
-    <ul className={style.navList}>
+    <ul className={footer ? style.navListFooter : style.navList}>
       <li className={style.navItem}>
         <NavLink to="/" className={style.navLink}>
           Головна
@@ -17,7 +17,7 @@ export const Navigation = () => {
       </li>
       <li className={style.navItem}>
         <NavLink to="our-activity" className={style.navLink}>
-          Наша Діяльність
+          Наша діяльність
         </NavLink>
       </li>
       <li className={style.navItem}>

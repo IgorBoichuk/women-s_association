@@ -4,13 +4,47 @@
 .footer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 45px;
+}
+
+.footerWrapper {
+  // display: flex;
+  // justify-content: center;
+  display: grid;
+  justify-items: center;
+  @include tablet {
+    // display: grid;
+    justify-items: normal;
+    grid-template-columns: 1fr 1fr;
+  }
+  @include tabletHorizontal {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.leftSideWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  justify-content: center;
+  @include tabletHorizontal {
+    // flex-direction: row;
+  }
+}
+
+.footerLink {
+  text-decoration: none;
 }
 
 .contactsWrapper {
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.adressLink {
+  text-decoration: none;
 }
 
 .contacts {
@@ -26,6 +60,13 @@
   font-size: 16px;
   line-height: 150%; /* 24px */
   color: $black;
+
+  &:hover {
+    color: $blue;
+  }
+  &:focus {
+    color: $blue;
+  }
 }
 
 .email {
@@ -38,6 +79,16 @@
   font-size: 16px;
   line-height: 150%; /* 24px */
   color: $black;
+  &:hover {
+    color: $blue;
+  }
+  &:focus {
+    color: $blue;
+  }
+}
+
+.email:hover .emailIcon {
+  fill: $blue;
 }
 
 .emailIcon {
@@ -45,8 +96,83 @@
 }
 
 .social {
+  display: flex;
+  gap: 40px;
+  // justify-content: space-between;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  font-family: Mariupol;
+  line-height: 150%; /* 24px */
+  color: $black;
+
+  &:hover {
+    color: $blue;
+  }
+  &:focus {
+    color: $blue;
+  }
+}
+
+.socialLink:hover .socialIcon {
+  fill: $blue;
 }
 
 .socialIcon {
-  fill: $blue;
+  fill: $gray_dark;
+  margin-right: 8px;
+}
+
+.footerNav {
+  display: none;
+  @include tabletHorizontal {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.footerformName {
+  font-family: Mariupol;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 150%; /* 30px */
+  columns: $black;
+}
+
+.footerform {
+  display: none;
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.inputEmail {
+  padding: 3px 10px;
+  border: none;
+  border-radius: 8px;
+  outline: 1px solid $black;
+  &:focus {
+    outline: 2px solid $blue;
+  }
+}
+
+.inputText {
+  padding: 3px 10px;
+  border-radius: 8px;
+  border: none;
+  outline: 1px solid $black;
+  height: 100%;
+  &:focus {
+    outline: 2px solid $blue;
+  }
+}
+
+.rights {
+  text-align: center;
 }
