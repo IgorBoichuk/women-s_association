@@ -9,8 +9,8 @@ import ButtonMain from "../shared/ButtonMain/ButtonMain";
 
 export const Footer = () => {
   return (
-    <Container>
-      <footer className={style.footer}>
+    <footer className={style.footer}>
+      <Container mb0>
         <div className={style.footerWrapper}>
           <div className={style.leftSideWrapper}>
             <Link to="/" className={style.footerLink}>
@@ -67,10 +67,11 @@ export const Footer = () => {
             <ButtonMain color="yellow" children="Відправити" />
           </form>
         </div>
-        <span className={style.rights}>
-          © 2023 ОМІДЗУ. All Rights Reserved.
-        </span>
-      </footer>
-    </Container>
+      </Container>
+      <span className={style.rights}>
+        © 2023 ОМІДЗУ.{" "}
+        <Link to="/privacy-policy">Політика конфіденційності</Link>
+      </span>
+    </footer>
   );
 };

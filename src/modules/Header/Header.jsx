@@ -9,29 +9,31 @@ import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
-    <Container mb0={true}>
-      <header className={style.header}>
-        <Link to="/" className={style.headerLink}>
-          <Logo />
-        </Link>
-        <nav className={style.navMenu}>
-          <Navigation />
-        </nav>
-        <Link className={style.socialLink}>
-          <svg width="46" height="46" className={style.socialIcon}>
-            <use xlinkHref={`${sprite}#facebook`}></use>
-          </svg>
-        </Link>
-        <button className={style.button}>Підтримати</button>
-        <button className={style.burgerBtn}>
-          <svg className={style.menuBtn} width="24" height="24">
-            <use xlinkHref={`${sprite}#menu`}></use>
-          </svg>
-        </button>
-        <div className={style.langSwitcher}>
-          <LanguageSwitcher />
+    <header className={style.header}>
+      <Container mb0>
+        <div className={style.headerWrapper}>
+          <Link to="/" className={style.headerLink}>
+            <Logo />
+          </Link>
+          <nav className={style.navMenu}>
+            <Navigation />
+          </nav>
+          <Link className={style.socialLink}>
+            <svg width="46" height="46" className={style.socialIcon}>
+              <use xlinkHref={`${sprite}#facebook`}></use>
+            </svg>
+          </Link>
+          <button className={style.button}>Підтримати</button>
+          <button className={style.burgerBtn}>
+            <svg className={style.menuBtn} width="24" height="24">
+              <use xlinkHref={`${sprite}#menu`}></use>
+            </svg>
+          </button>
+          <div className={style.langSwitcher}>
+            <LanguageSwitcher />
+          </div>
         </div>
-      </header>
-    </Container>
+      </Container>
+    </header>
   );
 };
