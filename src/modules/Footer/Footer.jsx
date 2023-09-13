@@ -37,7 +37,7 @@ export const Footer = () => {
                 <Link className={style.socialLink}>
                   <svg width="32" height="32" className={style.socialIcon}>
                     <use xlinkHref={`${sprite}#facebook`}></use>
-                  </svg>{" "}
+                  </svg>
                   <span>Facebook</span>
                 </Link>
                 <Link className={style.socialLink}>

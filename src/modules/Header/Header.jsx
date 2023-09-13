@@ -17,13 +17,20 @@ export const Header = () => {
         <nav className={style.navMenu}>
           <Navigation />
         </nav>
+        <Link className={style.socialLink}>
+          <svg width="46" height="46" className={style.socialIcon}>
+            <use xlinkHref={`${sprite}#facebook`}></use>
+          </svg>
+        </Link>
         <button className={style.button}>Підтримати</button>
         <button className={style.burgerBtn}>
           <svg className={style.menuBtn} width="24" height="24">
             <use xlinkHref={`${sprite}#menu`}></use>
           </svg>
         </button>
-        <LanguageSwitcher />
+        <div className={style.langSwitcher}>
+          <LanguageSwitcher />
+        </div>
       </header>
     </Container>
   );

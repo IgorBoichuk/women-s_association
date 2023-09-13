@@ -28,6 +28,23 @@
   }
 }
 
+.socialLink {
+  display: none;
+  padding: 0;
+  @include tabletHorizontal {
+    display: block;
+  }
+}
+
+.socialLink:hover .socialIcon {
+  fill: $blue;
+}
+
+.socialIcon {
+  fill: $gray_dark;
+  padding: 0;
+}
+
 .button {
   border: none;
   padding: 10px 20px;
@@ -36,6 +53,13 @@
   &:hover {
     background-color: $blue;
     color: $white;
+  }
+}
+
+.langSwitcher {
+  display: none;
+  @include desktop {
+    display: block;
   }
 }
 
