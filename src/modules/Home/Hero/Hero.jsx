@@ -2,14 +2,15 @@ import React from "react";
 import style from "./Hero.module.scss";
 import { Container } from "../../shared/Container/Container";
 import ButtonMain from "../../shared/ButtonMain/ButtonMain";
+
 const Hero = () => {
 	return (
 		<section className={style.container}>
 			<div className={style.containerImage}>
 				<div className={style.textWrapper}>
-					<h3 className={style.titleTablet}>
+					<h1 className={style.titleTablet}>
 						Об’єднання дружин і матерів Захисників України
-					</h3>
+					</h1>
 					<p className={style.titleDescriptionTablet}>
 						Ми - жінки з родин воїнів російсько-української війни,
 						<br />
@@ -24,9 +25,9 @@ const Hero = () => {
 			</div>
 			<div className={style.mobWrapper}>
 				<Container>
-					<h3 className={style.titleSeparate}>
+					<h1 className={style.titleSeparate}>
 						Об’єднання дружин і матерів Захисників України
-					</h3>
+					</h1>
 					<p className={style.titleDescription}>
 						Ми - жінки з родин воїнів російсько-української війни, об'єдналися
 						для розвитку активного громадянського суспільства в Україні

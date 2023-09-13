@@ -10,7 +10,7 @@ export const Home = () => {
       <Hero />
       <OurAchievements />
       <Stories />
-      <Statistics />
+      {/* <Statistics /> */}
     </>
   );
 };
