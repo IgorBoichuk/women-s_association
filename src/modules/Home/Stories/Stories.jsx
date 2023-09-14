@@ -24,7 +24,7 @@ const Stories = () => {
   };
   return (
     <section className={style.section}>
-      <Container>
+     
         <h2 className={style.title}>Історії, які надихають</h2>
         <div className={style.swiperMobile}>
           <div className="mainWrapperForStorySlider">
@@ -177,7 +177,7 @@ const Stories = () => {
             </div>
           </div>
         </div>
-      </Container>
+      
     </section>
   );
 };
