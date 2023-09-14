@@ -3,8 +3,13 @@ import style from "./OurAchievements.module.scss";
 import { Container } from "../../shared/Container/Container";
 import CustomSlider from "./CustomSlider/CustomSlider";
 import DesktopTable from "./DesktopTable/DesktopTable";
+import { useGetOurAchievements } from "../../../hooks/useGetOurAchievements";
 
-const OurAchievements = () => {
+const OurAchievements = ({ setLoadingAchievements }) => {
+  const ourAchievements = useGetOurAchievements(setLoadingAchievements);
+
+  console.log(ourAchievements);
+
   return (
     <Container>
       <section className={style.section}>
