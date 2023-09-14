@@ -2,11 +2,11 @@
 @import "../../sass/variables.scss";
 
 .header {
-  display: flex;
-  justify-content: space-between;
-
-  align-items: center;
-  padding: 10px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  background-color: $white;
+  padding: 16px 0;
 
   @include mobileBig {
   }
@@ -15,6 +15,12 @@
   }
   @include desktop {
   }
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .headerLink {
@@ -28,6 +34,23 @@
   }
 }
 
+.socialLink {
+  display: none;
+  padding: 0;
+  @include tabletHorizontal {
+    display: block;
+  }
+}
+
+.socialLink:hover .socialIcon {
+  fill: $blue;
+}
+
+.socialIcon {
+  fill: $gray_dark;
+  padding: 0;
+}
+
 .button {
   border: none;
   padding: 10px 20px;
@@ -36,6 +59,13 @@
   &:hover {
     background-color: $blue;
     color: $white;
+  }
+}
+
+.langSwitcher {
+  display: none;
+  @include desktop {
+    display: block;
   }
 }
 

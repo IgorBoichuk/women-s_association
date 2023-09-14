@@ -23,15 +23,16 @@
   font-family: Mariupol;
   font-size: 16px;
   font-weight: 500;
-  line-height: 150%; /* 30px */
+  line-height: 100%;
   color: $blue;
+
   @include mobileBig {
   }
 
   @include tablet {
     display: flex;
     align-items: center;
-    width: 250px;
+    width: 220px;
     &::before {
       content: "";
       display: block;
@@ -49,7 +50,7 @@
 .logoTextFooter {
   display: flex;
   align-items: center;
-  width: 250px;
+  width: 210px;
   font-family: Mariupol;
   font-size: 16px;
   font-weight: 500;

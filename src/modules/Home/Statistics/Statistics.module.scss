@@ -1,0 +1,175 @@
+@import "../../../sass/variables.scss";
+@import "../../../sass/mixin.scss";
+
+.section {
+  background-color: $blue;
+  padding: 40px 0;
+  @include desktop {
+    padding: 100px 0;
+  }
+}
+
+.list {
+  display: grid;
+  row-gap: 50px;
+  grid-template-columns: 1fr;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+  }
+  @include desktop {
+    // padding-bottom: 100px;
+  }
+}
+
+.sectionTitle {
+  text-align: center;
+  font-family: Mariupol;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  color: $white;
+  margin-bottom: 40px;
+
+  @include tablet {
+    text-align: center;
+  }
+  @include tabletHorizontal {
+    font-size: 28px;
+  }
+
+  @include desktop {
+    font-size: 46px;
+  }
+}
+
+.itemWrapper {
+  position: relative;
+  display: grid;
+  justify-self: center;
+  //   align-items: center;
+  //   justify-self: center;
+  column-gap: 16px;
+  max-width: 350px;
+  &::after {
+    position: absolute;
+    bottom: -20px;
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #ffed00 0%,
+      rgba(255, 237, 0, 0) 100%
+    );
+
+    @include tablet {
+      top: 48%;
+    }
+
+    @include desktop {
+      top: 59%;
+    }
+  }
+}
+
+.iconWrapper {
+  position: relative;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  margin: 0 auto;
+
+  @include tablet {
+    grid-column-start: 2;
+    grid-column-end: 2;
+  }
+}
+
+.vector {
+  @include tablet {
+    width: 60px;
+    height: 60px;
+  }
+  @include desktop {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+.vectorIcon {
+  position: absolute;
+  left: 8px;
+  top: 12px;
+  @include tablet {
+    left: 10px;
+    top: 15px;
+
+    width: 40px;
+    height: 40px;
+  }
+  @include desktop {
+    left: 30px;
+    top: 50px;
+
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.itemTitle {
+  font-family: Mariupol;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 150%;
+  color: $white;
+
+  grid-column: 2;
+  grid-column-end: 2;
+
+  @include tablet {
+    margin-bottom: 10px;
+  }
+  @include desktop {
+    font-size: 36px;
+  }
+}
+
+.itemDescription {
+  font-family: Mariupol;
+  font-size: 16px;
+  line-height: 150%;
+  color: $white;
+
+  //   height: 80px;
+
+  grid-column: 2;
+  grid-column-end: 2;
+
+  @include tablet {
+    height: 100px;
+  }
+
+  @include desktop {
+    height: 150px;
+    font-size: 24px;
+  }
+}
+
+.underline {
+  width: 100%;
+  height: 4px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #ffed00 0%,
+    rgba(255, 237, 0, 0) 100%
+  );
+  grid-column: 1;
+  grid-column-end: 4;
+  @include tablet {
+    grid-row-start: 3;
+    margin-bottom: 5px;
+  }
+}

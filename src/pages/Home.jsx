@@ -8,11 +8,11 @@ export const Home = () => {
   const [loadingAchievements, setLoadingAchievements] = useState(false);
 
   return (
-		<>
-			<Hero />
-			<OurAchievements setLoadingAchievements={setLoadingAchievements} />
-			<Stories />
-			{/* <Statistics /> */}
-		</>
-	);
+    <>
+      <Hero />
+      <OurAchievements setLoadingAchievements={setLoadingAchievements} />
+      <Stories />
+      <Statistics />
+    </>
+  );
 };

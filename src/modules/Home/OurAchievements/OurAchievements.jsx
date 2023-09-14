@@ -6,19 +6,19 @@ import DesktopTable from "./DesktopTable/DesktopTable";
 import { useGetOurAchievements } from "../../../hooks/useGetOurAchievements";
 
 const OurAchievements = ({ setLoadingAchievements }) => {
-	const ourAchievements = useGetOurAchievements(setLoadingAchievements);
-	
-		console.log(ourAchievements);
-	
-	return (
-		<Container>
-			<section className={style.section}>
-				<h2 className={style.title}>Наші досягнення</h2>
-				<CustomSlider />
-				<DesktopTable />
-			</section>
-		</Container>
-	);
+  const ourAchievements = useGetOurAchievements(setLoadingAchievements);
+
+  console.log(ourAchievements);
+
+  return (
+    <Container>
+      <section className={style.section}>
+        <h2 className={style.title}>Наші досягнення</h2>
+        <CustomSlider />
+        <DesktopTable />
+      </section>
+    </Container>
+  );
 };
 
 export default OurAchievements;

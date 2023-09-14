@@ -3,7 +3,7 @@
 
 .navList {
   list-style: none;
-  gap: 40px;
+  // gap: 40px;
 
   font-family: Mariupol;
   font-size: 20px;
@@ -11,6 +11,11 @@
 
   @include tabletHorizontal {
     display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  @include desktop {
+    gap: 40px;
   }
 }
 
