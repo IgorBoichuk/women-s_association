@@ -10,7 +10,7 @@ import ButtonMain from "../shared/ButtonMain/ButtonMain";
 export const Footer = () => {
   return (
     <footer className={style.footer}>
-      <Container mb0>
+      <Container>
         <div className={style.footerWrapper}>
           <div className={style.leftSideWrapper}>
             <Link to="/" className={style.footerLink}>

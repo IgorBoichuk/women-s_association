@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 export const Header = () => {
   return (
     <header className={style.header}>
-      <Container mb0>
+      <Container>
         <div className={style.headerWrapper}>
           <Link to="/" className={style.headerLink}>
             <Logo />

@@ -6,6 +6,6 @@ import style from "./Container.module.scss";
 //   return <div className={containerClass}>{children}</div>;
 // };
 
-export const Container = ({ children, mb0 }) => {
+export const Container = ({ children }) => {
   return <div className={style.container}>{children}</div>;
 };
