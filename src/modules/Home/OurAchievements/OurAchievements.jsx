@@ -4,21 +4,28 @@ import { Container } from "../../shared/Container/Container";
 import CustomSlider from "./CustomSlider/CustomSlider";
 import DesktopTable from "./DesktopTable/DesktopTable";
 import { useGetOurAchievements } from "../../../hooks/useGetOurAchievements";
+import { useTranslate } from "../../../Context/ContextProvider";
 
 const OurAchievements = ({ setLoadingAchievements }) => {
-  const ourAchievements = useGetOurAchievements(setLoadingAchievements);
+	const { isEnglish, toggleButtonFunc } = useTranslate();
 
-  console.log(ourAchievements);
+	const ourAchievements = useGetOurAchievements(
+		setLoadingAchievements,
+		isEnglish
+	);
 
-  return (
-    <Container>
-      <section className={style.section}>
-        <h2 className={style.title}>Наші досягнення</h2>
-        <CustomSlider />
-        <DesktopTable />
-      </section>
-    </Container>
-  );
+	console.log(ourAchievements);
+
+	return (
+		<Container>
+			<section className={style.section}>
+				<h2 className={style.title}>Наші досягнення</h2>
+				<CustomSlider />
+				<DesktopTable ourAchievements={ourAchievements} />
+				<button onClick={toggleButtonFunc}>CLICK ME</button>
+			</section>
+		</Container>
+	);
 };
 
 export default OurAchievements;
