@@ -6,7 +6,7 @@ import sprite from "../../../assets/svg/sprite.svg";
 export const Statistics = () => {
   return (
     <section className={style.section}>
-      <Container mb0>
+      <Container>
         <h3 className={style.sectionTitle}>
           Разом з вами ми робимо великі справи
         </h3>

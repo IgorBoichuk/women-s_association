@@ -5,16 +5,15 @@ import CustomSlider from "./CustomSlider/CustomSlider";
 import DesktopTable from "./DesktopTable/DesktopTable";
 
 const OurAchievements = () => {
-	
-	return (
-		<Container>
-			<section className={style.section}>
-				<h2 className={style.title}>Наші досягнення</h2>
-				<CustomSlider />
-				<DesktopTable />
-			</section>
-		</Container>
-	);
+  return (
+    <Container>
+      <section className={style.section}>
+        <h2 className={style.title}>Наші досягнення</h2>
+        <CustomSlider />
+        <DesktopTable />
+      </section>
+    </Container>
+  );
 };
 
 export default OurAchievements;
