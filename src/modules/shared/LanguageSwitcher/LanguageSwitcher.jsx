@@ -1,11 +1,24 @@
 import React from "react";
 import style from "./LangugeSwitcher.module.scss";
+import { useLanguage } from "../../../Context/ContextProvider";
 
 export const LanguageSwitcher = () => {
-  return (
-    <div className={style.langWrapper}>
-      <span className={style.langUa}>UA</span>
-      <span className={style.langEng}>ENG</span>
-    </div>
-  );
+	const { languages, currentLanguage, toggleLanguage } = useLanguage();
+
+	return (
+		<div className={style.langWrapper}>
+			{Object.keys(languages).map((langCode) => (
+				<span
+					key={langCode}
+					onClick={() => toggleLanguage(langCode)}
+					className={
+						currentLanguage === langCode
+							? `${style.lang} ${style.active}`
+							: `${style.lang}`
+					}>
+					{languages[langCode]}
+				</span>
+			))}
+		</div>
+	);
 };

@@ -2,29 +2,39 @@
 @import "../../../sass/variables.scss";
 
 .langWrapper {
-  display: none;
-  font-family: Mariupol;
-  font-size: 20px;
-  line-height: 150%; /* 30px */
-  color: $gray_dark;
+	display: none;
+	font-family: Mariupol;
+	font-size: 20px;
+	line-height: 150%; /* 30px */
+	color: $gray_dark;
 
-  @include tabletHorizontal {
-    display: flex;
-    gap: 12px;
-  }
+	@include tabletHorizontal {
+		display: flex;
+		gap: 12px;
+	}
 }
 
-.langUa {
+.lang {
+	position: relative;
+	transition: cursor $hoverAnimation;
+
+	&:hover,
+	&:focus {
+		cursor: pointer;
+	}
 }
 
-.langEng {
-  position: relative;
-  &::before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    border-left: 1px solid $black;
-    left: -6px;
-    top: 4px;
-  }
+.langWrapper .lang:nth-child(2) {
+	&::before {
+		position: absolute;
+		content: "";
+		height: 20px;
+		border-left: 1px solid $black;
+		left: -6px;
+		top: 4px;
+	}
+}
+
+.active {
+	color: $black;
 }

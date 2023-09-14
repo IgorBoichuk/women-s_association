@@ -1,18 +1,27 @@
 import React, { createContext, useContext, useState } from "react";
 
-export const MyContext = createContext();
+const LanguageContext = createContext();
 
-export const ContextProvider = ({ children }) => {
-	const [isEnglish, setIsEnglish] = useState(false);
-	const toggleButtonFunc = () => {
-		setIsEnglish((prevState) => !prevState);
+export function useLanguage() {
+	return useContext(LanguageContext);
+}
+
+export function LanguageProvider({ children }) {
+	const languages = {
+		uk: "UA",
+		en: "EN",
 	};
+
+	const [currentLanguage, setCurrentLanguage] = useState("uk");
+
+	const toggleLanguage = (language) => {
+		setCurrentLanguage(language);
+	};
+
 	return (
-		<MyContext.Provider value={{ isEnglish, toggleButtonFunc }}>
+		<LanguageContext.Provider
+			value={{ languages, currentLanguage, toggleLanguage }}>
 			{children}
-		</MyContext.Provider>
+		</LanguageContext.Provider>
 	);
-};
-export function useTranslate() {
-	return useContext(MyContext);
 }
