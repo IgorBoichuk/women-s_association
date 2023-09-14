@@ -21,7 +21,7 @@ export const useGetOurAchievements = (setLoadingAchievements, shouldAddSuffix) =
 			querySnapshot.forEach((doc) => {
 				temp.push({ id: doc.id, ...doc.data() });
 			});
-			console.log(temp);
+			
 
 			setAchievements(temp);
 

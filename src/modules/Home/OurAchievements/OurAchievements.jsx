@@ -14,7 +14,7 @@ const OurAchievements = ({ setLoadingAchievements }) => {
 		isEnglish
 	);
 
-	console.log(ourAchievements);
+	
 
 	return (
 		<Container>
