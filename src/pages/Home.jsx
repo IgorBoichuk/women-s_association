@@ -10,7 +10,7 @@ export const Home = () => {
   return (
     <>
       <Hero />
-      <OurAchievements setLoadingAchievements={setLoadingAchievements} />
+      {/* <OurAchievements setLoadingAchievements={setLoadingAchievements} /> */}
       <Stories />
       <Statistics />
     </>

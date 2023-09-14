@@ -2,8 +2,12 @@ import React from "react";
 import style from "./Hero.module.scss";
 import { Container } from "../../shared/Container/Container";
 import ButtonMain from "../../shared/ButtonMain/ButtonMain";
+import { useGetHeroContent } from "../../../hooks/useGetHeroContent";
+import { useGetOurAchievements, useGetSingleProblem } from "../../../hooks/useGetOurAchievements";
 
 const Hero = () => {
+	const achievement = useGetSingleProblem("hero_en");
+	console.log(achievement);
 	return (
 		<section className={style.container}>
 			<div className={style.containerImage}>

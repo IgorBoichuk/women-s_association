@@ -1,5 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import { useGetOurAchievements } from "../hooks/useGetOurAchievements";
+import { useTranslate } from "../Context/ContextProvider";
+
 
 export const News = () => {
-  return <div>News</div>;
+//   const [loadingAchievements, setLoadingAchievements] = useState(false);
+//   const { isEnglish, toggleButtonFunc } = useTranslate();
+//   const ourAchievements = useGetOurAchievements(
+// 		setLoadingAchievements,
+// 		isEnglish
+// 	);
+  return (
+		<ul >
+			{/* {ourAchievements.map((el) => ( */}
+				<li
+					// key={el.id}
+					>
+					<div >
+						{/* !! MAX SYMBOLS 288 WITH BACKSPACES */}
+				  <p >
+					  {/* {el.text} */}
+				  </p>
+					</div>
+				</li>
+			{/* // ))} */}
+		</ul>
+	);
 };

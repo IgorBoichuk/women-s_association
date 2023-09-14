@@ -1,17 +1,17 @@
 import React from 'react'
 import style from './DesktopTable.module.scss'
 const DesktopTable = ({ ourAchievements }) => {
-	return <ul className={style.achievementsList}>{ourAchievements.map((el) => (
+	return <ul className={style.achievementsList}>
 		
-		<li key={el.id} className={style.achievementEl}>
+		<li  className={style.achievementEl}>
 				<div className={style.contentWrapper}>
 					{/* !! MAX SYMBOLS 288 WITH BACKSPACES */}
 					<p className={style.content}>
-						{el.text}
+						
 					</p>
 				</div>
 			</li>
-	))}</ul>;
+	</ul>;
 };
 
 export default DesktopTable
