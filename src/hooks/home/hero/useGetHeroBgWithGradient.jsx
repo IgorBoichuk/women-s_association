@@ -7,9 +7,6 @@ export const useGetBgWithGradient = () => {
 	const [bgWithGradient, setBgWithGradient] = useState("");
 	const [heroBgURL, setHeroBgURL] = useState("");
 
-
-	
-
 	const isSmallScreen = useMediaQuery({ maxWidth: 467 });
 	const isMediumScreen = useMediaQuery({ minWidth: 467, maxWidth: 768 });
 	const isLargeScreen = useMediaQuery({ minWidth: 768 });

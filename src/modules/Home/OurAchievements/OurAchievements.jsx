@@ -1,31 +1,31 @@
-// import React from "react";
-// import style from "./OurAchievements.module.scss";
-// import { Container } from "../../shared/Container/Container";
-// import CustomSlider from "./CustomSlider/CustomSlider";
-// import DesktopTable from "./DesktopTable/DesktopTable";
-// import { useGetOurAchievements } from "../../../hooks/useGetOurAchievements";
-// import { useTranslate } from "../../../Context/ContextProvider";
+import React from "react";
+import style from "./OurAchievements.module.scss";
+import { Container } from "../../shared/Container/Container";
+import CustomSlider from "./CustomSlider/CustomSlider";
+import DesktopTable from "./DesktopTable/DesktopTable";
+import { useGetOurAchievements } from "../../../hooks/home/our-achievements/useGetOurAchievements";
+import { useGetAchievementsTitle } from "../../../hooks/home/our-achievements/useGetAchievementsTitle";
 
-// const OurAchievements = ({ setLoadingAchievements }) => {
-// 	const { isEnglish, toggleButtonFunc } = useTranslate();
+const OurAchievements = () => {
+	const { achievements, loadingAchievements } = useGetOurAchievements();
+    const { title, loadingTitle } = useGetAchievementsTitle();
+    
+	return (
+		<Container>
+			<section className={style.section}>
+				{!loadingTitle && title && (
+					<h2 className={style.title}>{title.title}</h2>
+				)}
 
-// 	const ourAchievements = useGetOurAchievements(
-// 		setLoadingAchievements,
-// 		isEnglish
-// 	);
+				{!loadingAchievements && (
+					<>
+						<CustomSlider achievements={achievements} />
+						<DesktopTable achievements={achievements} />
+					</>
+				)}
+			</section>
+		</Container>
+	);
+};
 
-	
-
-// 	return (
-// 		<Container>
-// 			<section className={style.section}>
-// 				<h2 className={style.title}>Наші досягнення</h2>
-// 				<CustomSlider />
-// 				<DesktopTable ourAchievements={ourAchievements} />
-// 				<button onClick={toggleButtonFunc}>CLICK ME</button>
-// 			</section>
-// 		</Container>
-// 	);
-// };
-
-// export default OurAchievements;
+export default OurAchievements;

@@ -1,41 +1,32 @@
-// import { useEffect, useState } from "react";
-// import { query, collection, getDocs } from "firebase/firestore";
-// import { fireStore } from "../firebase/firebase";
+import { useEffect, useState } from "react";
+import { orderBy, query, collection, getDocs } from "firebase/firestore";
+import { fireStore } from "../../../firebase/firebase";
+import { useLanguage } from "../../../Context/ContextProvider";
 
-// export const useGetOurAchievements = (
-// 	// setLoadingAchievements
-// 	// , shouldAddSuffix
-// ) => {
-// 	const [achievements, setAchievements] = useState([]);
-// const [loadingAchievements, setLoadingAchievements] = useState(false);
-// 	useEffect(() => {
-// 		const getAchievements = async () => {
-// 			// const collectionName = shouldAddSuffix
-// 			// 	? "achievements_en"
-// 			// 	: "achievements";
-// 			setLoadingAchievements(true);
-// 			const q = query(
-// 				collection(fireStore, "home/hero/hero")
-// 				// ,
-// 				// orderBy("order", "asc")
-// 			);
+export const useGetOurAchievements = () => {
+	const { currentLanguage } = useLanguage();
+	const key =
+		currentLanguage === "uk"
+			? "/home/our-achievements/ our-achievements/our-achievements_uk/our-achievements_uk"
+			: "/home/our-achievements/ our-achievements/ our-achievements_en/ our-achievements_en";
 
-// 			const querySnapshot = await getDocs(q);
-// 			console.log(querySnapshot);
-// 			const temp = [];
-// 			querySnapshot.forEach((doc) => {
-// 				temp.push({ id: doc.id, ...doc.data() });
-// 			});
-			
+	const [achievements, setAchievements] = useState([]);
+	const [loadingAchievements, setLoadingAchievements] = useState(true);
 
-// 			setAchievements(temp);
+	useEffect(() => {
+		const getProblems = async () => {
+			const q = query(collection(fireStore, key), orderBy("order", "asc"));
+			const queRySnapshot = await getDocs(q);
+			const temp = [];
+			queRySnapshot.forEach((doc) => {
+				temp.push({ id: doc.id, ...doc.data() });
+			});
+			setAchievements(temp);
+			setLoadingAchievements(false);
+		};
 
-// 			setLoadingAchievements(false);
-// 		};
+		getProblems();
+	}, [setLoadingAchievements, key]);
 
-// 		getAchievements();
-// 	}, []);
-
-// 	return achievements;
-// };
-
+	return { achievements, loadingAchievements };
+};
