@@ -10,6 +10,9 @@ import "swiper/css/navigation";
 import SkeletonCustom from "../../../shared/Skeleton/SkeletonCustom/SkeletonCustom";
 const CustomSlider = ({ achievements, loading }) => {
 
+
+
+	
 	const breakpoints = {
 		768: {
 			slidesPerView: 2,
