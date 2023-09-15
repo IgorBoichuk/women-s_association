@@ -12,10 +12,13 @@ export function LanguageProvider({ children }) {
 		en: "EN",
 	};
 
-	const [currentLanguage, setCurrentLanguage] = useState("uk");
+	const [currentLanguage, setCurrentLanguage] = useState(
+		localStorage.getItem("currentLanguage") || "uk"
+	);
 
 	const toggleLanguage = (language) => {
 		setCurrentLanguage(language);
+		localStorage.setItem("currentLanguage", language);
 	};
 
 	return (
