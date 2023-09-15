@@ -45,6 +45,8 @@ const CustomSlider = ({ achievements }) => {
 							</SwiperSlide>
 						))}
 					</Swiper>
+
+					
 				)}
 				<div className='swiper-button-next'>
 					<svg>
