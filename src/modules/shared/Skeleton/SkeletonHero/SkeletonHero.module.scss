@@ -1,0 +1,26 @@
+@import "../../../../sass/variables.scss";
+@import "../../../../sass/mixin.scss";
+
+@keyframes pulse {
+	50% {
+		opacity: 0.5;
+	}
+}
+.skeleton {
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	background-color: $gray_dark;
+	border-radius: 20px;
+
+	width: 100%;
+	height: 428px;
+
+	@include tablet {
+		min-height: 410px;
+	}
+	@include tabletHorizontal {
+		min-height: 399px;
+	}
+	@include desktop {
+		min-height: 910px;
+	}
+}

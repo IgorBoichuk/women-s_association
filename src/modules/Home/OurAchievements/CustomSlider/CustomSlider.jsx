@@ -7,7 +7,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import sprite from "../../../../assets/svg/sprite.svg";
 import "swiper/css/navigation";
-const CustomSlider = ({ achievements }) => {
+import SkeletonCustom from "../../../shared/Skeleton/SkeletonCustom/SkeletonCustom";
+const CustomSlider = ({ achievements, loading }) => {
+
 	const breakpoints = {
 		768: {
 			slidesPerView: 2,
@@ -23,7 +25,26 @@ const CustomSlider = ({ achievements }) => {
 	return (
 		<div className={style.customSwiper}>
 			<div className='mainWrapperForTabletSlider'>
-				{achievements && (
+				{loading && (
+					<Swiper
+						navigation={{
+							nextEl: ".swiper-button-next",
+							prevEl: ".swiper-button-prev",
+						}}
+						pagination={true}
+						modules={[Pagination, Navigation]}
+						className='mySwiper'
+						breakpoints={breakpoints}>
+						{[...Array(10)].map((_, idx) => (
+							<SkeletonCustom
+								key={idx}
+								height='24px'
+								mb='12px'
+							/>
+						))}
+					</Swiper>
+				)}
+				{!loading && achievements && (
 					<Swiper
 						navigation={{
 							nextEl: ".swiper-button-next",
@@ -45,8 +66,6 @@ const CustomSlider = ({ achievements }) => {
 							</SwiperSlide>
 						))}
 					</Swiper>
-
-					
 				)}
 				<div className='swiper-button-next'>
 					<svg>

@@ -20,6 +20,11 @@
 	padding: 20px 40px; 
 	min-height: 328px;
 	max-height: 100%;
+	cursor: pointer;
+	transition: scale $hoverAnimation;
+	&:hover {
+		scale: 1.2;
+	}
 
 	@include desktopWide {
 		min-height: 243px;

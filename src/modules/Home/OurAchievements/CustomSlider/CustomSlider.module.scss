@@ -26,6 +26,16 @@
 	justify-content: center;
 	align-items: center;
 	padding: 24px 16px;
+	cursor: pointer;
+	transition: scale $hoverAnimation;
+
+
+
+	
+
+	&:hover {
+		scale: 1.2;
+	}
 	@include tablet {
 		min-height: 322px;
 	}

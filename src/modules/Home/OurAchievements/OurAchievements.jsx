@@ -5,24 +5,30 @@ import CustomSlider from "./CustomSlider/CustomSlider";
 import DesktopTable from "./DesktopTable/DesktopTable";
 import { useGetOurAchievements } from "../../../hooks/home/our-achievements/useGetOurAchievements";
 import { useGetAchievementsTitle } from "../../../hooks/home/our-achievements/useGetAchievementsTitle";
+import SkeletonCustom from "../../shared/Skeleton/SkeletonCustom/SkeletonCustom";
 
 const OurAchievements = () => {
 	const { achievements, loadingAchievements } = useGetOurAchievements();
-    const { title, loadingTitle } = useGetAchievementsTitle();
-    
+	const { title, loadingTitle } = useGetAchievementsTitle();
+
 	return (
 		<Container>
 			<section className={style.section}>
+				{loadingTitle && (
+					<SkeletonCustom height="44px" mb="12px" />
+				)}
 				{!loadingTitle && title && (
 					<h2 className={style.title}>{title.title}</h2>
 				)}
 
-				{!loadingAchievements && (
-					<>
-						<CustomSlider achievements={achievements} />
-						<DesktopTable achievements={achievements} />
-					</>
-				)}
+				<CustomSlider
+					loading={loadingAchievements}
+					achievements={achievements}
+				/>
+				<DesktopTable
+					loading={loadingAchievements}
+					achievements={achievements}
+				/>
 			</section>
 		</Container>
 	);

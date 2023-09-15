@@ -9,6 +9,24 @@
 	font-family: "Mariupol";
 }
 
+html::-webkit-scrollbar {
+  width: 14px;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: $gray_dark;
+  border-radius: 4px;
+  transition: all $hoverAnimation;
+  cursor: pointer;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background-color: $black;
+  
+}
+html:hover {
+  overflow: auto;
+
+}
+
 ul[class],
 ol[class] {
 	padding: 0;

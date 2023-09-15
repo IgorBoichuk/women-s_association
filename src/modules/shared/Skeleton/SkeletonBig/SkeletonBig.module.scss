@@ -1,0 +1,23 @@
+@import "../../../../sass/mixin.scss";
+@import "../../../../sass/variables.scss";
+
+@keyframes pulse {
+    50% {
+        opacity: .5;
+    }
+}
+.skeleton {
+    display: none;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+     background-color: $gray_dark;
+     border-radius: 20px;
+     
+     @include tablet {
+        display: block;
+        height: 64px;
+     }
+     @include desktop {
+        display: block;
+        height: 144px;
+     }
+}
