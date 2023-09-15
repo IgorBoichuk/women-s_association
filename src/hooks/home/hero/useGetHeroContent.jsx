@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { doc, getDoc } from "firebase/firestore";
-import { fireStore } from "../firebase/firebase";
+import { fireStore } from "../../../firebase/firebase";
 
 export const useGetHeroContent = (lang) => {
 	const [heroContent, setHeroContent] = useState({});

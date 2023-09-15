@@ -7,12 +7,11 @@
 	justify-content: center;
 	gap: 16px;
 
-	
 	margin-bottom: 100px;
 }
 
 .containerImage {
-	background-image: url("../../../assets/img/hero/herobgMob.png");
+	// background: url("../../../assets/img/hero/heroBgMob.png");
 	width: 100%;
 	height: 428px;
 	background-position: center center;
@@ -22,25 +21,25 @@
 	padding: 48px 116px 96px 24px;
 
 	@include mobileBig {
-		background: linear-gradient(
-				0deg,
-				rgba(0, 0, 0, 0.45) 0%,
-				rgba(0, 0, 0, 0.45) 100%
-			),
-			url("../../../assets/img/hero/herobg.png"),
-			lightgray -393.124px -1px / 303.297% 114.486% no-repeat;
+		// background: linear-gradient(
+		// 		0deg,
+		// 		rgba(0, 0, 0, 0.45) 0%,
+		// 		rgba(0, 0, 0, 0.45) 100%
+		// 	),
+		// 	url("../../../assets/img/hero/heroBg.png"),
+		// 	lightgray -393.124px -1px / 303.297% 114.486% no-repeat;
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
 	@include tablet {
 		min-height: 410px;
-		background: linear-gradient(
-				90deg,
-				rgba(31, 31, 31, 0.85) 38.67%,
-				rgba(31, 31, 31, 0) 100%
-			),
-			url("../../../assets/img/hero/herobg.png"), lightgray 50%;
+		// background: linear-gradient(
+		// 		90deg,
+		// 		rgba(31, 31, 31, 0.85) 38.67%,
+		// 		rgba(31, 31, 31, 0) 100%
+		// 	),
+		// 	url("../../../assets/img/hero/heroBg.png"), lightgray 50%;
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;

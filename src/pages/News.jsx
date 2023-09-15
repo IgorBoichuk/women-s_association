@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useGetOurAchievements } from "../hooks/useGetOurAchievements";
+import { useGetOurAchievements } from "../hooks/home/our-achievements/useGetOurAchievements";
 import { useTranslate } from "../Context/ContextProvider";
 
 
