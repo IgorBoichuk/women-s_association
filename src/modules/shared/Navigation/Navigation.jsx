@@ -7,6 +7,8 @@ import SkeletonCustom from "../Skeleton/SkeletonCustom/SkeletonCustom";
 export const Navigation = ({ footer }) => {
 	const { navList, loadingNavList } = useGetNavList();
 
+
+  
 	return (
 		<>
 			{loadingNavList && (
