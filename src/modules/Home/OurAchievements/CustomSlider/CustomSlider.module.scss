@@ -33,9 +33,7 @@
 
 	
 
-	&:hover {
-		scale: 1.2;
-	}
+	
 	@include tablet {
 		min-height: 322px;
 	}
@@ -45,7 +43,11 @@
         margin-bottom: 0px;
         min-height: 25em;
 	max-height: 25em;
+	&:hover {
+		scale: 1.1;
+	}
     }
+	
 }
 
 .content {
