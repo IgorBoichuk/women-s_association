@@ -5,7 +5,7 @@ import "./index.scss";
 
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import { LanguageProvider } from "./Context/ContextProvider";
+import { LanguageProvider } from "./Context/LanguageProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

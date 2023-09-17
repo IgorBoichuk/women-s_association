@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { fireStore } from "../../firebase/firebase";
-import { useLanguage } from "../../Context/ContextProvider";
+import { useLanguage } from "../../Context/LanguageProvider";
 
 export const useGetLogoText = (setLoading) => {
 	const [logo, setLogo] = useState({});
@@ -11,7 +11,7 @@ export const useGetLogoText = (setLoading) => {
 		currentLanguage === "uk"
 			? "/header/header_uk/header_uk/logo-text"
 			: "/header/header_en/header_en/logo-text";
-	
+
 	useEffect(() => {
 		const getLogoTextFromDB = async () => {
 			setLoading(true);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "./Header.module.scss";
 import sprite from "../../assets/svg/sprite.svg";
 import { Navigation } from "../shared/Navigation/Navigation";
@@ -6,9 +6,11 @@ import { Logo } from "../shared/Logo/Logo";
 import { Container } from "../shared/Container/Container";
 import { LanguageSwitcher } from "../shared/LanguageSwitcher/LanguageSwitcher";
 import { Link } from "react-router-dom";
+import { useGetButtonText } from "../../hooks/header/useGetButtonText";
+import SkeletonCustom from "../shared/Skeleton/SkeletonCustom/SkeletonCustom";
 
 export const Header = () => {
-
+	const { button, loadingButton } = useGetButtonText();
 
 	return (
 		<header className={style.header}>
@@ -17,10 +19,10 @@ export const Header = () => {
 					<Link
 						to='/'
 						className={style.headerLink}>
-						<Logo  />
+						<Logo />
 					</Link>
 					<nav className={style.navMenu}>
-						<Navigation  />
+						<Navigation />
 					</nav>
 					<Link className={style.socialLink}>
 						<svg
@@ -30,7 +32,10 @@ export const Header = () => {
 							<use xlinkHref={`${sprite}#facebook`}></use>
 						</svg>
 					</Link>
-					<button className={style.button}>Підтримати</button>
+					{loadingButton && <SkeletonCustom />}
+					{!loadingButton && button && (
+						<button className={style.button}>{button.text}</button>
+					)}
 					<button className={style.burgerBtn}>
 						<svg
 							className={style.menuBtn}

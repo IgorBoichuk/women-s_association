@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { orderBy, query, collection, getDocs } from "firebase/firestore";
 import { fireStore } from "../../../firebase/firebase";
-import { useLanguage } from "../../../Context/ContextProvider";
+import { useLanguage } from "../../../Context/LanguageProvider";
 
 export const useGetOurAchievements = () => {
 	const { currentLanguage } = useLanguage();

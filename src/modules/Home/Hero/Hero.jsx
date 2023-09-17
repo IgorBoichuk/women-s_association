@@ -3,11 +3,11 @@ import style from "./Hero.module.scss";
 import { Container } from "../../shared/Container/Container";
 import ButtonMain from "../../shared/ButtonMain/ButtonMain";
 import { useGetHeroContent } from "../../../hooks/home/hero/useGetHeroContent";
-import { useLanguage } from "../../../Context/ContextProvider";
 import { useGetBgWithGradient } from "../../../hooks/home/hero/useGetHeroBgWithGradient";
 import SkeletonBig from "../../shared/Skeleton/SkeletonBig/SkeletonBig";
 import SkeletonCustom from "../../shared/Skeleton/SkeletonCustom/SkeletonCustom";
 import SkeletonHero from "../../shared/Skeleton/SkeletonHero/SkeletonHero";
+import { useLanguage } from "../../../Context/LanguageProvider";
 
 const Hero = () => {
 	const { currentLanguage } = useLanguage();

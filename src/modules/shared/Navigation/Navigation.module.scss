@@ -32,6 +32,14 @@
   }
 }
 
+.skeletonWrapper {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
 .navItem {
   padding: 12px 4px 12px 4px;
   border-bottom: 2px solid transparent;

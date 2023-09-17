@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { fireStore } from "../../../firebase/firebase";
-import { useLanguage } from "../../../Context/ContextProvider";
+import { useLanguage } from "../../../Context/LanguageProvider";
 
 export const useGetAchievementsTitle = () => {
 	const [title, setTitle] = useState({});
