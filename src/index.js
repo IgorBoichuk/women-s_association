@@ -9,9 +9,9 @@ import { LanguageProvider } from "./Context/ContextProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter basename="women-s_association">
-    <LanguageProvider>
-      <App />
-    </LanguageProvider>
-  </BrowserRouter>
+	<BrowserRouter basename='women-s_association'>
+		<LanguageProvider>
+			<App />
+		</LanguageProvider>
+	</BrowserRouter>
 );

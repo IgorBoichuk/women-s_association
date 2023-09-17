@@ -6,6 +6,12 @@
   align-items: center;
 }
 
+.skeletonWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .logo {
   display: block;
   width: 42px;

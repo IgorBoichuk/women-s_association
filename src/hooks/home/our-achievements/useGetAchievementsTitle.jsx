@@ -15,10 +15,14 @@ export const useGetAchievementsTitle = () => {
 		const getTitleFromDB = async () => {
 			setLoadingTitle(true);
 			const docRef = doc(fireStore, key);
-			const docSnap = await getDoc(docRef);
-			if (docSnap.exists()) {
-				const titleObj = docSnap.data();
-				setTitle({ id: docSnap.id, ...titleObj });
+			try {
+				const docSnap = await getDoc(docRef);
+				if (docSnap.exists()) {
+					const titleObj = docSnap.data();
+					setTitle({ id: docSnap.id, ...titleObj });
+				}
+			} catch (error) {
+				console.error("Ошибка при получении данных из Firestore:", error);
 			}
 			setLoadingTitle(false);
 		};

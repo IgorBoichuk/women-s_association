@@ -14,7 +14,7 @@ export const useGetOurAchievements = () => {
 	const [loadingAchievements, setLoadingAchievements] = useState(true);
 
 	useEffect(() => {
-		const getProblems = async () => {
+		const getAchievements = async () => {
 			const q = query(collection(fireStore, key), orderBy("order", "asc"));
 			const queRySnapshot = await getDocs(q);
 			const temp = [];
@@ -25,7 +25,7 @@ export const useGetOurAchievements = () => {
 			setLoadingAchievements(false);
 		};
 
-		getProblems();
+		getAchievements();
 	}, [setLoadingAchievements, key]);
 
 	return { achievements, loadingAchievements };
