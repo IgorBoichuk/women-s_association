@@ -24,7 +24,7 @@ const Modal = ({ children, visible, setVisible }) => {
 				<button
 					className={style.closeButton}
 					onClick={() => setVisible(false)}>
-					<svg className={style.clockIcon}>
+					<svg className={style.closeIcon}>
 						<use xlinkHref={`${sprite}#close`}></use>
 					</svg>
 				</button>

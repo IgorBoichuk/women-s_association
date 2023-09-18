@@ -9,13 +9,14 @@ import SkeletonCustom from "../../shared/Skeleton/SkeletonCustom/SkeletonCustom"
 import SkeletonHero from "../../shared/Skeleton/SkeletonHero/SkeletonHero";
 import { useLanguage } from "../../../Context/LanguageProvider";
 import Modal from "../../shared/Modal/Modal";
+import WantToHelp from "../../shared/Modal/WantToHelp/WantToHelp";
 
 const Hero = () => {
 	const { currentLanguage } = useLanguage();
 	const { heroContent, loading } = useGetHeroContent(currentLanguage);
 	const { bgWithGradient, loadingPhoto } = useGetBgWithGradient();
 
-	const [modal, setModal] = useState(false);
+	const [modal, setModal] = useState(true);
 
 	return (
 		<section className={style.container}>
@@ -95,7 +96,7 @@ const Hero = () => {
 			<Modal
 				visible={modal}
 				setVisible={setModal}>
-				<h1>Hello world</h1>
+				<WantToHelp />
 			</Modal>
 		</section>
 	);

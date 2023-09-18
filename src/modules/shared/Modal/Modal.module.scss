@@ -11,14 +11,15 @@
 	right: 0;
 	pointer-events: none;
 	transition: opacity $hoverAnimation;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.8);
 
 	.modalContent {
+		position: relative;
 		opacity: 0;
 		padding: 100px 100px;
-		background: white;
+		background: $white;
 		border-radius: 8px;
-		
+
 		transition: opacity $hoverAnimation;
 	}
 }
@@ -33,4 +34,36 @@
 	justify-content: center;
 	align-items: center;
 	pointer-events: auto;
+}
+
+.closeButton {
+	position: absolute;
+	top: 24px;
+	right: 24px;
+	width: 44px;
+	height: 44px;
+	border-radius: 44px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	border: none;
+	background-color: $white;
+	transition: background $hoverAnimation;
+	cursor: pointer;
+	&:hover {
+		background-color: $black;
+		svg {
+			stroke: $white;
+			fill: $white;
+		}
+	}
+}
+
+.closeIcon {
+	display: block;
+	width: 24px;
+	height: 24px;
+	stroke: $black;
+	transition: all $hoverAnimation;
 }
