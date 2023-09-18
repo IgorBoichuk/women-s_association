@@ -25,12 +25,14 @@ export const Header = () => {
 						<Navigation />
 					</nav>
 					<Link className={style.socialLink}>
-						<svg
-							width='46'
-							height='46'
-							className={style.socialIcon}>
-							<use xlinkHref={`${sprite}#facebook`}></use>
-						</svg>
+						{!loadingButton && button && (
+							<svg
+								width='46'
+								height='46'
+								className={style.socialIcon}>
+								<use xlinkHref={`${sprite}#facebook`}></use>
+							</svg>
+						)}
 					</Link>
 					{loadingButton && <SkeletonCustom />}
 					{!loadingButton && button && (
