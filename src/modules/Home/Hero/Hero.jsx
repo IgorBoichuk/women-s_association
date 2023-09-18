@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./Hero.module.scss";
 import { Container } from "../../shared/Container/Container";
 import ButtonMain from "../../shared/ButtonMain/ButtonMain";
@@ -8,15 +8,18 @@ import SkeletonBig from "../../shared/Skeleton/SkeletonBig/SkeletonBig";
 import SkeletonCustom from "../../shared/Skeleton/SkeletonCustom/SkeletonCustom";
 import SkeletonHero from "../../shared/Skeleton/SkeletonHero/SkeletonHero";
 import { useLanguage } from "../../../Context/LanguageProvider";
+import Modal from "../../shared/Modal/Modal";
 
 const Hero = () => {
 	const { currentLanguage } = useLanguage();
 	const { heroContent, loading } = useGetHeroContent(currentLanguage);
 	const { bgWithGradient, loadingPhoto } = useGetBgWithGradient();
 
+	const [modal, setModal] = useState(false);
+
 	return (
 		<section className={style.container}>
-			{loading && !bgWithGradient && <SkeletonHero />}
+			{loading && <SkeletonHero />}
 			{!loadingPhoto && bgWithGradient && (
 				<div
 					className={style.containerImage}
@@ -48,7 +51,11 @@ const Hero = () => {
 						)}
 						{!loading && heroContent && (
 							<>
-								<ButtonMain color={"yellow"}>{heroContent.button1}</ButtonMain>
+								<ButtonMain
+									onClick={() => setModal(true)}
+									color={"yellow"}>
+									{heroContent.button1}
+								</ButtonMain>
 								<ButtonMain>{heroContent.button2}</ButtonMain>
 							</>
 						)}
@@ -85,6 +92,11 @@ const Hero = () => {
 					)}
 				</Container>
 			</div>
+			<Modal
+				visible={modal}
+				setVisible={setModal}>
+				<h1>Hello world</h1>
+			</Modal>
 		</section>
 	);
 };

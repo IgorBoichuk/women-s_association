@@ -22,9 +22,10 @@ html::-webkit-scrollbar-thumb:hover {
   background-color: $black;
   
 }
-html:hover {
-  overflow: auto;
 
+
+body.modal-open {
+    overflow: hidden;
 }
 
 ul[class],

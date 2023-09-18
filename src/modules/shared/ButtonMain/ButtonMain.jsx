@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./ButtonMain.module.scss";
 
-const ButtonMain = ({ children, color, maxW }) => {
+const ButtonMain = ({ children, color, maxW, onClick }) => {
 	const maxWidthStyle = {
 		maxWidth: maxW,
 	};
@@ -11,6 +11,7 @@ const ButtonMain = ({ children, color, maxW }) => {
 
 	return (
 		<button
+			onClick={onClick}
 			className={`${buttonClassName} ${style.customButton}`}
 			style={maxWidthStyle}>
 			{children}

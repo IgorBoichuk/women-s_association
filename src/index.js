@@ -11,7 +11,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<BrowserRouter basename='women-s_association'>
 		<LanguageProvider>
-			<App />
+			
+				<App />
+			
 		</LanguageProvider>
 	</BrowserRouter>
 );

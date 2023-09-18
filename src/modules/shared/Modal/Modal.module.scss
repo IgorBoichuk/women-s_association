@@ -1,0 +1,36 @@
+@import "../../../sass/variables.scss";
+@import "../../../sass/mixin.scss";
+
+.overlay {
+	opacity: 0;
+	z-index: 1000000000;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	pointer-events: none;
+	transition: opacity $hoverAnimation;
+	background: rgba(0, 0, 0, 0.5);
+
+	.modalContent {
+		opacity: 0;
+		padding: 100px 100px;
+		background: white;
+		border-radius: 8px;
+		
+		transition: opacity $hoverAnimation;
+	}
+}
+
+.modalContent.active {
+	opacity: 1;
+}
+
+.overlay.active {
+	opacity: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: auto;
+}

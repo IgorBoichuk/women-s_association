@@ -45,7 +45,7 @@ export const Header = () => {
 						</svg>
 					</button>
 					<div className={style.langSwitcher}>
-						<LanguageSwitcher />
+						{!loadingButton && <LanguageSwitcher />}
 					</div>
 				</div>
 			</Container>
