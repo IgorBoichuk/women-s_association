@@ -16,7 +16,7 @@ const Hero = () => {
 	const { heroContent, loading } = useGetHeroContent(currentLanguage);
 	const { bgWithGradient, loadingPhoto } = useGetBgWithGradient();
 
-	const [modal, setModal] = useState(true);
+	const [modal, setModal] = useState(false);
 
 	return (
 		<section className={style.container}>

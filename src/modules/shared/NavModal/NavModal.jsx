@@ -5,7 +5,6 @@ import ButtonMain from "../ButtonMain/ButtonMain";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 import ReactDOM from "react-dom";
 import { useCallback, useEffect } from "react";
-
 const modalRootElement = document.querySelector("#modal");
 
 export const NavModal = ({ close }) => {

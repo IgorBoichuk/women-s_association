@@ -15,7 +15,7 @@ import { Facebook } from "../shared/SocialLinks/Facebook";
 export const Header = () => {
   const { button, loadingButton } = useGetButtonText();
   const { isOpen, toggle } = useModal();
-
+ console.log(isOpen);
 	return (
 		<header className={style.header}>
 			<Container>
@@ -42,7 +42,7 @@ export const Header = () => {
 					{!loadingButton && button && (
 						<button className={style.button}>{button.text}</button>
 					)}
-					<button className={style.burgerBtn}>
+					<button className={style.burgerBtn} onClick={toggle}>
 						<svg
 							className={style.menuBtn}
 							width='24'
@@ -54,6 +54,7 @@ export const Header = () => {
 						{!loadingButton && <LanguageSwitcher />}
 					</div>
 				</div>
+				{isOpen && <NavModal close={toggle} />}
 			</Container>
 		</header>
 	);
