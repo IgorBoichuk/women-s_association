@@ -2,7 +2,7 @@ import React from "react";
 import style from "./LangugeSwitcher.module.scss";
 import { useLanguage } from "../../../Context/LanguageProvider";
 
-export const LanguageSwitcher = (modal) => {
+export const LanguageSwitcher = () => {
   const { languages, currentLanguage, toggleLanguage } = useLanguage();
 
   return (

@@ -4,7 +4,7 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 9;
+  z-index: 5;
   background-color: $white;
   padding: 16px 0;
 
@@ -36,7 +36,6 @@
 
 .socialLink {
   display: none;
-  padding: 0;
   @include tabletHorizontal {
     display: block;
   }
@@ -68,9 +67,7 @@
 }
 
 .burgerBtn {
-  position: absolute;
-  left: 0;
-  z-index: 150;
+  position: relative;
   border: none;
   background-color: transparent;
   @include tabletHorizontal {
@@ -84,10 +81,8 @@
 }
 
 .closeBtn {
-  // position: absolute;
-  // z-index: 110;
-  fill: $black;
-  display: block;
+  position: absolute;
+  z-index: 9;
   top: 0;
   left: 50%;
   transform: translate(-50%);
