@@ -4,7 +4,7 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 9;
+  z-index: 5;
   background-color: $white;
   padding: 16px 0;
 
@@ -18,7 +18,6 @@
 }
 
 .headerWrapper {
-  
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,19 +36,9 @@
 
 .socialLink {
   display: none;
-  padding: 0;
   @include tabletHorizontal {
     display: block;
   }
-}
-
-.socialLink:hover .socialIcon {
-  fill: $blue;
-}
-
-.socialIcon {
-  fill: $gray_dark;
-  padding: 0;
 }
 
 .button {
@@ -60,6 +49,7 @@
   &:hover {
     background-color: $blue;
     color: $white;
+    cursor: pointer;
   }
 }
 
@@ -70,7 +60,14 @@
   }
 }
 
+.burgerBtnWrapper {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
 .burgerBtn {
+  position: relative;
   border: none;
   background-color: transparent;
   @include tabletHorizontal {
@@ -81,4 +78,12 @@
 .menuBtn {
   fill: $black;
   display: block;
+}
+
+.closeBtn {
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
 }

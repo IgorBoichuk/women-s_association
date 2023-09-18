@@ -1,0 +1,33 @@
+@import "../../../sass/mixin.scss";
+@import "../../../sass/variables.scss";
+
+.modalOverlay {
+ 
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+
+  @include tabletHorizontal {
+    display: none;
+  }
+}
+.modal {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 27px;
+  padding: 16px;
+  width: 70%;
+  height: 100%;
+  margin-left: auto;
+  background-color: #fff;
+}
+
+.languageSwitcher {
+  margin-left: auto;
+  margin-right: auto;
+}

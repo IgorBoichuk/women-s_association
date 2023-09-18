@@ -2,74 +2,72 @@
 @import "../../../sass/mixin.scss";
 
 .buttonYellow {
-	padding: 24px 32px;
-	display: flex;
-	width: 100%;
-	align-items: center;
-	justify-content: center;
-	border-radius: 100px;
-	font-weight: 500;
-	line-height: 150%;
-	border: none;
-	background-color: $gold;
-    color: $black;
-    transition: all $hoverAnimation;
-    cursor: pointer;
+  padding: 24px 32px;
+  display: flex;
+  //   width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  font-weight: 500;
+  line-height: 150%;
+  border: none;
+  background-color: $gold;
+  color: $black;
+  transition: all $hoverAnimation;
+  cursor: pointer;
 
-	&:hover,
-	&:focus,
-	&:active {
-		background-color: $blue;
-        color: $white;
-	}
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $blue;
+    color: $white;
+  }
 
-	@include tablet {
-		max-width: 211px;
-	}
-	@include tabletHorizontal {
-		padding: 16px 32px;
-	}
-	@include desktop {
-		padding: 32px;
-		max-width: 274px;
-	}
-
+  @include tablet {
+    // max-width: 211px;
+  }
+  @include tabletHorizontal {
+    padding: 16px 32px;
+  }
+  @include desktop {
+    padding: 32px;
+    // max-width: 274px;
+  }
 }
 
 .buttonTransparent {
-	padding: 24px 32px;
-	display: flex;
-	width: 100%;
-	align-items: center;
-	justify-content: center;
-	border-radius: 100px;
-	font-weight: 500;
-	line-height: 150%;
-	border: 1px solid $blue;
-	background-color: $white;
-    color: $black;
-    transition: all $hoverAnimation;
-    cursor: pointer;
+  padding: 24px 32px;
+  display: flex;
+  //   width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  font-weight: 500;
+  line-height: 150%;
+  border: 1px solid $blue;
+  background-color: $white;
+  color: $black;
+  transition: all $hoverAnimation;
+  cursor: pointer;
 
-	&:hover,
-	&:focus,
-	&:active {
-		background-color: $blue;
-        color: $white;
-	}
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $blue;
+    color: $white;
+  }
 
-	@include tablet {
-		max-width: 211px;
-	}
-	@include tabletHorizontal {
-		padding: 16px 32px;
-	}
-	@include desktop {
-		padding: 32px;
-		max-width: 274px;
-	}
+  @include tablet {
+    max-width: 211px;
+  }
+  @include tabletHorizontal {
+    padding: 16px 32px;
+  }
+  @include desktop {
+    padding: 32px;
+    max-width: 274px;
+  }
 }
 
 .maxW {
-	
 }

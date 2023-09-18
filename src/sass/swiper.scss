@@ -1,0 +1,121 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-pagination-bullets {
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+  }
+  .swiper-pagination-bullet-active {
+    width: 16px;
+    height: 16px;
+  }
+}
+.mainWrapperForTabletSlider {
+  position: relative;
+}
+.mainWrapperForStorySlider {
+  position: relative;
+}
+.mainWrapperForTabletSlider .swiper-pagination-bullets {
+  @include tablet {
+    display: none;
+  }
+}
+
+.mainWrapperForStorySlider .swiper-pagination-bullets {
+  @include desktop {
+    display: none;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainWrapperForTabletSlider .swiper-button-next,
+.mainWrapperForTabletSlider .swiper-button-prev {
+  display: none;
+  width: 44px;
+  height: 44px;
+  top: 23em;
+  @include tablet {
+    display: block;
+  }
+  @include tabletHorizontal {
+    top: 13em;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+  border-radius: 200px;
+  border: 2px solid $blue_bright;
+  transition: all $hoverAnimation;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    stroke: $white;
+    fill: $white;
+    background-color: $blue_bright;
+  }
+}
+.mainWrapperForTabletSlider .swiper-button-next {
+  right: 43%;
+  @include tabletHorizontal {
+    right: -1%;
+  }
+}
+.mainWrapperForTabletSlider .swiper-button-prev {
+  left: 43%;
+  @include tabletHorizontal {
+    left: -1%;
+  }
+}
+
+.mainWrapperForStorySlider .swiper-button-next1,
+.mainWrapperForStorySlider .swiper-button-prev1 {
+  position: absolute;
+  z-index: 1;
+  display: none;
+  width: 64px;
+  height: 64px;
+  top: 15em;
+  background-color: $white;
+  @include tablet {
+    display: block;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+  border-radius: 200px;
+  border: 2px solid $blue_bright;
+  transition: all $hoverAnimation;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    stroke: $white;
+    fill: $white;
+    background-color: $blue_bright;
+  }
+}
+
+.mainWrapperForStorySlider .swiper-button-next1 {
+  right: -1%;
+}
+
+.mainWrapperForStorySlider .swiper-button-prev1 {
+  left: -1%;
+}
+.mainWrapperForStorySlider .swiper-button-disabled {
+  display: none;
+}
