@@ -7,11 +7,24 @@ import SkeletonCustom from "../Skeleton/SkeletonCustom/SkeletonCustom";
 export const Logo = ({ footerLogo }) => {
 	const [loading, setLoading] = useState(true);
 	const { logo } = useGetLogoText(setLoading);
+	const width = footerLogo ? "82px" : "42px";
+	const height = footerLogo ? "82px" : "42px";
+	const borderRadius = footerLogo ? "82px" : "42px";
+
 	return (
 		<div className={style.logoRapper}>
-			<svg className={footerLogo ? style.logoFooter : style.logo}>
-				<use xlinkHref={`${sprite}#logo`}></use>
-			</svg>
+			{loading && (
+				<SkeletonCustom
+					width={width}
+					height={height}
+					br={borderRadius}
+				/>
+			)}
+			{!loading && logo && (
+				<svg className={footerLogo ? style.logoFooter : style.logo}>
+					<use xlinkHref={`${sprite}#logo`}></use>
+				</svg>
+			)}
 			{loading && (
 				<div className={style.skeletonWrapper}>
 					<SkeletonCustom

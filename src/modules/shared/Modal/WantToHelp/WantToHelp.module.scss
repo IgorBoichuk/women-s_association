@@ -1,0 +1,13 @@
+@import "../../../../sass/variables.scss";
+@import "../../../../sass/mixin.scss";
+.container {
+	border: 1px solid red;
+}
+
+.title {
+	color: $black;
+	text-align: center;
+	font-size: 28px;
+	font-weight: 500;
+	line-height: 120%;
+}

@@ -6,7 +6,6 @@ import "swiper/css/navigation";
 import style from "./Stories.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { Container } from "../../shared/Container/Container";
 import sprite from "../../../assets/svg/sprite.svg";
 import ButtonMain from "../../shared/ButtonMain/ButtonMain";
 const Stories = () => {
