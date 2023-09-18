@@ -9,7 +9,7 @@ import SkeletonCustom from "../../shared/Skeleton/SkeletonCustom/SkeletonCustom"
 import SkeletonHero from "../../shared/Skeleton/SkeletonHero/SkeletonHero";
 import { useLanguage } from "../../../Context/LanguageProvider";
 import Modal from "../../shared/Modal/Modal";
-import WantToHelp from "../../shared/Modal/WantToHelp/WantToHelp";
+import WantToHelpForm from "../../shared/Modal/WantToHelpForm/WantToHelpForm";
 
 const Hero = () => {
 	const { currentLanguage } = useLanguage();
@@ -96,7 +96,7 @@ const Hero = () => {
 			<Modal
 				visible={modal}
 				setVisible={setModal}>
-				<WantToHelp />
+				<WantToHelpForm />
 			</Modal>
 		</section>
 	);
