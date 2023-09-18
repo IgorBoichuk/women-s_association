@@ -14,6 +14,8 @@ root.render(
 			
 				<App />
 			
+
+			
 		</LanguageProvider>
 	</BrowserRouter>
 );
