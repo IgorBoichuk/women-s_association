@@ -8,47 +8,58 @@ import { LanguageSwitcher } from "../shared/LanguageSwitcher/LanguageSwitcher";
 import { Link } from "react-router-dom";
 import { useGetButtonText } from "../../hooks/header/useGetButtonText";
 import SkeletonCustom from "../shared/Skeleton/SkeletonCustom/SkeletonCustom";
+import { useModal } from "../../hooks/useModal";
+import { NavModal } from "../shared/NavModal/NavModal";
+import { Facebook } from "../shared/SocialLinks/Facebook";
 
 export const Header = () => {
-	const { button, loadingButton } = useGetButtonText();
+  const { button, loadingButton } = useGetButtonText();
+  const { isOpen, toggle } = useModal();
 
-	return (
-		<header className={style.header}>
-			<Container>
-				<div className={style.headerWrapper}>
-					<Link
-						to='/'
-						className={style.headerLink}>
-						<Logo />
-					</Link>
-					<nav className={style.navMenu}>
-						<Navigation />
-					</nav>
-					<Link className={style.socialLink}>
-						<svg
-							width='46'
-							height='46'
-							className={style.socialIcon}>
-							<use xlinkHref={`${sprite}#facebook`}></use>
-						</svg>
-					</Link>
-					{loadingButton && <SkeletonCustom />}
-					{!loadingButton && button && (
-						<button className={style.button}>{button.text}</button>
-					)}
-					<button className={style.burgerBtn}>
-						<svg
-							className={style.menuBtn}
-							width='24'
-							height='24'>
-							<use xlinkHref={`${sprite}#menu`}></use>
-						</svg>
-					</button>
-					<div className={style.langSwitcher}>
-						<LanguageSwitcher />
-					</div>
-				</div>
-			</Container>
-		</header>
-	);
+  return (
+    <header className={style.header}>
+      <Container>
+        <div className={style.headerWrapper}>
+          <Link to="/" className={style.headerLink}>
+            <Logo />
+          </Link>
+          <nav className={style.navMenu}>
+            <Navigation />
+          </nav>
+          <div className={style.socialLink}>
+            <Facebook />
+          </div>
+
+          {loadingButton && <SkeletonCustom />}
+          {!loadingButton && button && (
+            <button className={style.button}>{button.text}</button>
+          )}
+          <div className={style.burgerBtnWrapper}>
+            <button className={style.burgerBtn} type="button" onClick={toggle}>
+              <svg
+                className={style.menuBtn}
+                style={{ display: isOpen ? "none" : "block" }}
+                width="24"
+                height="24"
+              >
+                <use xlinkHref={`${sprite}#menu`}></use>
+              </svg>
+              <svg
+                className={style.closeBtn}
+                style={{ display: isOpen ? "block" : "none" }}
+                width="24"
+                height="24"
+              >
+                <use xlinkHref={`${sprite}#close`}></use>
+              </svg>
+            </button>
+          </div>
+          <div className={style.langSwitcher}>
+            <LanguageSwitcher />
+          </div>
+        </div>
+        {isOpen && <NavModal close={toggle} />}
+      </Container>
+    </header>
+  );
 };
