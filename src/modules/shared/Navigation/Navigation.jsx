@@ -16,6 +16,7 @@ export const Navigation = ({ footer, close }) => {
           ))}
         </div>
       )}
+      
       {!loadingNavList && navList && (
         <ul className={footer ? style.navListFooter : style.navList}>
           {navList.map((el) => (
