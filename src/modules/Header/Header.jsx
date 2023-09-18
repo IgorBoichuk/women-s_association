@@ -10,12 +10,11 @@ import { useGetButtonText } from "../../hooks/header/useGetButtonText";
 import SkeletonCustom from "../shared/Skeleton/SkeletonCustom/SkeletonCustom";
 import { useModal } from "../../hooks/useModal";
 import { NavModal } from "../shared/NavModal/NavModal";
-import { Facebook } from "../shared/SocialLinks/Facebook";
 
 export const Header = () => {
-  const { button, loadingButton } = useGetButtonText();
-  const { isOpen, toggle } = useModal();
- console.log(isOpen);
+	const { button, loadingButton } = useGetButtonText();
+	const { isOpen, toggle } = useModal();
+
 	return (
 		<header className={style.header}>
 			<Container>
@@ -42,7 +41,9 @@ export const Header = () => {
 					{!loadingButton && button && (
 						<button className={style.button}>{button.text}</button>
 					)}
-					<button className={style.burgerBtn} onClick={toggle}>
+					<button
+						className={style.burgerBtn}
+						onClick={toggle}>
 						<svg
 							className={style.menuBtn}
 							width='24'

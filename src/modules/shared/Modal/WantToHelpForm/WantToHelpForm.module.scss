@@ -11,3 +11,24 @@
 	font-weight: 500;
 	line-height: 120%;
 }
+
+.valid-input {
+  border: 2px solid green;
+}
+
+/* Стили для невалидного инпута */
+.invalid-input {
+  border: 2px solid red;
+}
+
+/* Стили для инпута, который не был активирован (не в фокусе) */
+/* Эти стили могут использоваться для обычных инпутов */
+.inactive-input {
+  border: 2px solid yellow;
+}
+
+/* Стили для сообщений об ошибках */
+.error {
+  color: red;
+  font-size: 14px;
+}

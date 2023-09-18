@@ -10,7 +10,7 @@
 /build
 
 
-.env
+
 .DS_Store
 .env.local
 .env.development.local
