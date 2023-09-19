@@ -1,53 +1,36 @@
-import React from 'react';
-import { useFormik } from "formik";
-import * as Yup from "yup";
+import React from "react";
+import classnames from "classnames";
 import style from "./WantToHelpForm.module.scss";
+import { Formik, Form, Field } from "formik";
 const WantToHelpForm = () => {
+	function validationEmail(value) {
+		const emailRegex = "/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/";
 
-	 const initialValues = {
-			email: "",
-			mobile: "",
-			checkbox1: false,
-			checkbox2: false,
-			checkbox3: false,
-			checkbox4: false,
-			checkbox5: false,
-			checkbox6: false,
-		};
-
-		const validationSchema = Yup.object().shape({
-			email: Yup.string()
-				.email("Invalid email address")
-				.required("Email is required"),
-			mobile: Yup.string()
-				.matches(/^\d{10}$/, "Mobile number must be 10 digits")
-				.required("Mobile number is required"),
-		});
-
-		const onSubmit = (values) => {
-			console.log("Form Data:", values);
-		};
-
-		const formik = useFormik({
-			initialValues,
-			validationSchema,
-			onSubmit,
-		});
-
-		const getInputClassName = (fieldName) => {
-			if (formik.touched[fieldName]) {
-				if (formik.errors[fieldName]) {
-					return "invalid-input";
-				} else {
-					return "valid-input";
-				}
-			}
-			return "";
-		};
-  return (
+		if (!value) {
+			return "Required";
+		} else if (!emailRegex.test(value)) {
+			return "Invalid email address ";
+		}
+	}
+	return (
 		<div className={style.container}>
 			<h3 className={style.title}>Я хочу допомогти</h3>
-			<form onSubmit={formik.handleSubmit}>
+			<Formik
+				initialValues={{
+					email: "",
+					password: "",
+				}}
+				onSubmit={(values) => {
+					console.log("submit", values);
+				}}></Formik>
+		</div>
+	);
+};
+
+export default WantToHelpForm;
+
+{
+	/* <form onSubmit={formik.handleSubmit}>
 				<div>
 					<label htmlFor='email'>Email:</label>
 					<input
@@ -94,9 +77,5 @@ const WantToHelpForm = () => {
 					))}
 				</div>
 				<button type='submit'>Submit</button>
-			</form>
-		</div>
-	);
+			</form> */
 }
-
-export default WantToHelpForm
