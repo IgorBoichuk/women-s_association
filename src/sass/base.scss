@@ -23,14 +23,11 @@ html::-webkit-scrollbar-thumb:hover {
 }
 
 
-body.modal-open {
+.modal-open {
     overflow: hidden;
 }
 
-ul[class],
-ol[class] {
-  padding: 0;
-}
+
 
 body,
 h1,
@@ -54,6 +51,12 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+}
+
+
+ul[class],
+ol[class] {
+  padding: 0;
 }
 
 ul[class],

@@ -16,7 +16,7 @@ const Hero = () => {
 	const { heroContent, loading } = useGetHeroContent(currentLanguage);
 	const { bgWithGradient, loadingPhoto } = useGetBgWithGradient();
 
-	const [modal, setModal] = useState(true);
+	const [modalWantToHelp, setModalModalWantToHelp] = useState(false);
 
 	return (
 		<section className={style.container}>
@@ -53,7 +53,7 @@ const Hero = () => {
 						{!loading && heroContent && (
 							<>
 								<ButtonMain
-									onClick={() => setModal(true)}
+									onClick={() => setModalModalWantToHelp(true)}
 									color={"yellow"}>
 									{heroContent.button1}
 								</ButtonMain>
@@ -86,7 +86,11 @@ const Hero = () => {
 							<h1 className={style.titleSeparate}>{heroContent.title}</h1>
 							<p className={style.titleDescription}>{heroContent.text}</p>
 							<div className={style.buttonContainer}>
-								<ButtonMain color={"yellow"}>{heroContent.button1}</ButtonMain>
+								<ButtonMain
+									onClick={() => setModalModalWantToHelp(true)}
+									color={"yellow"}>
+									{heroContent.button1}
+								</ButtonMain>
 								<ButtonMain>{heroContent.button2}</ButtonMain>
 							</div>
 						</>
@@ -94,8 +98,8 @@ const Hero = () => {
 				</Container>
 			</div>
 			<Modal
-				visible={modal}
-				setVisible={setModal}>
+				visible={modalWantToHelp}
+				setVisible={setModalModalWantToHelp}>
 				<WantToHelpForm />
 			</Modal>
 		</section>

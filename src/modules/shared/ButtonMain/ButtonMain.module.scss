@@ -2,8 +2,9 @@
 @import "../../../sass/mixin.scss";
 
 .buttonYellow {
-  padding: 24px 32px;
+  padding: 32px;
   display: flex;
+  height: 77px;
   //   width: 100%;
   align-items: center;
   justify-content: center;
@@ -15,29 +16,32 @@
   color: $black;
   transition: all $hoverAnimation;
   cursor: pointer;
+ 
 
   &:hover,
   &:focus,
   &:active {
     background-color: $blue;
     color: $white;
+    
   }
 
   @include tablet {
-    // max-width: 211px;
+    
   }
   @include tabletHorizontal {
     padding: 16px 32px;
   }
   @include desktop {
     padding: 32px;
-    // max-width: 274px;
+    
   }
 }
 
 .buttonTransparent {
   padding: 24px 32px;
   display: flex;
+  height: 77px;
   //   width: 100%;
   align-items: center;
   justify-content: center;
@@ -69,5 +73,4 @@
   }
 }
 
-.maxW {
-}
+

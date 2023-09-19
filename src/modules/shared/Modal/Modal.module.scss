@@ -15,13 +15,31 @@
 	background: rgba(0, 0, 0, 0.8);
 
 	.modalContent {
+		
+		overflow: hidden;
 		position: relative;
 		opacity: 0;
-		padding: 100px 100px;
+		padding: 4px;
+		@include mobileBig {
+			padding: 16px;
+		}
+		@include tablet {
+			padding: 32px;
+		}
+		@include desktop {
+			
+			padding: 100px;
+			padding-top: 16px;
+			padding-bottom: 16px;
+		}
+		@include desktopWide {
+			
+			
+		}
 		background: $white;
 		border-radius: 8px;
-
 		transition: opacity $hoverAnimation;
+		
 	}
 }
 
@@ -39,15 +57,12 @@
 
 .closeButton {
 	position: absolute;
-	top: 24px;
-	right: 24px;
-	width: 44px;
-	height: 44px;
+	top: 4px;
+	right: 4px;
 	border-radius: 44px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 10px;
 	border: none;
 	background-color: $white;
 	transition: background $hoverAnimation;
@@ -58,6 +73,18 @@
 			stroke: $white;
 			fill: $white;
 		}
+	}
+
+	@include tablet {
+		width: 44px;
+		height: 44px;
+		padding: 10px;
+	}
+	@include desktop {
+		top: 24px;
+		right: 24px;
+
+		padding: 10px;
 	}
 }
 

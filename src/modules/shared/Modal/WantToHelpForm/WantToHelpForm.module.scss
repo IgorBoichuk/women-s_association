@@ -1,34 +1,184 @@
 @import "../../../../sass/variables.scss";
 @import "../../../../sass/mixin.scss";
 .container {
-	border: 1px solid red;
+	// border: 1px solid red;
 }
 
 .title {
 	color: $black;
 	text-align: center;
-	font-size: 28px;
+	font-size: 20px;
+
 	font-weight: 500;
 	line-height: 120%;
+	margin-bottom: 8px;
+
+	@include tablet {
+		font-size: 24px;
+	}
+	@include desktop {
+		font-size: 28px;
+		margin-bottom: 40px;
+	}
 }
 
-.valid-input {
-  border: 2px solid green;
+.form {
+	display: flex;
+	flex-direction: column;
 }
 
-/* Стили для невалидного инпута */
-.invalid-input {
-  border: 2px solid red;
+.field {
+	width: 100%;
+	padding: 4px;
+
+	line-height: 150%;
+	border: 1px solid $gray_dark;
+	border-radius: 4px;
+	transition: all $hoverAnimation;
+
+	&:focus,
+	&:hover {
+		outline: none;
+		border-color: $blue_bright;
+		cursor: pointer;
+	}
+
+	@include tablet {
+		font-size: 20px;
+	}
+	@include desktop {
+		padding: 16px;
+	}
 }
 
-/* Стили для инпута, который не был активирован (не в фокусе) */
-/* Эти стили могут использоваться для обычных инпутов */
-.inactive-input {
-  border: 2px solid yellow;
+.errorInput {
+	border-color: red;
 }
 
-/* Стили для сообщений об ошибках */
 .error {
-  color: red;
-  font-size: 14px;
+	text-align: center;
+
+	color: red;
+	font-size: 12px;
+
+	min-height: 18px;
+	max-height: 18px;
+
+	padding-bottom: 4px;
+	padding-top: 4px;
+	position: relative;
+	span {
+		position: absolute;
+		top: 4px;
+		display: block;
+		text-wrap: wrap;
+		min-width: 100%;
+		max-width: 100%;
+	}
+}
+
+.errorPlaceHolder {
+	min-height: 18px;
+	max-height: 18px;
+}
+
+.checkboxGroup {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 4px;
+	@include tablet {
+		gap: 8px;
+	}
+
+	margin-bottom: 12px;
+
+	@include desktopWide {
+		margin-bottom: 40px;
+		gap: 24px;
+	}
+}
+
+.subTitle {
+	color: $black;
+	font-size: 16px;
+
+	font-weight: 500;
+	line-height: 150%;
+
+	@include desktop {
+		font-size: 20px;
+	}
+}
+
+.checkboxLabel {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	position: relative;
+}
+
+.checkboxInput {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.icon {
+	height: 18px;
+	min-width: 18px;
+	max-width: 18px;
+	fill: $blue_bright;
+	pointer-events: none;
+}
+
+.checkBoxDescription {
+	color: $black;
+	font-size: 16px;
+
+	line-height: 150%;
+	max-width: 368px;
+
+	@include desktop {
+		font-size: 20px;
+	}
+}
+
+.notChecked {
+	pointer-events: none;
+	height: 18px;
+	min-width: 18px;
+	border-radius: 2px;
+	border: 2px solid var(--m-3-sys-light-on-surface-variant, #49454f);
+}
+
+.buttonDisabled {
+	padding: 32px;
+	display: flex;
+
+	align-items: center;
+	justify-content: center;
+	border-radius: 100px;
+	font-weight: 500;
+	line-height: 150%;
+	border: none;
+	background-color: $gray_light;
+	color: $gray_dark;
+	pointer-events: none;
+	height: 77px;
+	@include tablet {
+	}
+	@include tabletHorizontal {
+		padding: 16px 32px;
+	}
+	@include desktop {
+		padding: 32px;
+	}
 }
