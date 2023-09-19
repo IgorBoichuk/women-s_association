@@ -94,6 +94,8 @@ const Hero = () => {
 								<ButtonMain>{heroContent.button2}</ButtonMain>
 							</div>
 						</>
+
+						
 					)}
 				</Container>
 			</div>
