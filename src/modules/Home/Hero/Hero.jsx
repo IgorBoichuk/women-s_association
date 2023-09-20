@@ -10,6 +10,7 @@ import SkeletonHero from "../../shared/Skeleton/SkeletonHero/SkeletonHero";
 import { useLanguage } from "../../../Context/LanguageProvider";
 import Modal from "../../shared/Modal/Modal";
 import WantToHelpForm from "../../shared/Modal/WantToHelpForm/WantToHelpForm";
+import NeedHelpForm from "../../shared/Modal/NeedHelpForm/NeedHelpForm";
 
 const Hero = () => {
 	const { currentLanguage } = useLanguage();
@@ -17,7 +18,7 @@ const Hero = () => {
 	const { bgWithGradient, loadingPhoto } = useGetBgWithGradient();
 
 	const [modalWantToHelp, setModalModalWantToHelp] = useState(false);
-
+	const [modalNeedHelp, setModalNeedHelp] = useState(false);
 	return (
 		<section className={style.container}>
 			{loading && <SkeletonHero />}
@@ -57,7 +58,9 @@ const Hero = () => {
 									color={"yellow"}>
 									{heroContent.button1}
 								</ButtonMain>
-								<ButtonMain>{heroContent.button2}</ButtonMain>
+								<ButtonMain onClick={() => setModalNeedHelp(true)}>
+									{heroContent.button2}
+								</ButtonMain>
 							</>
 						)}
 					</div>
@@ -91,11 +94,11 @@ const Hero = () => {
 									color={"yellow"}>
 									{heroContent.button1}
 								</ButtonMain>
-								<ButtonMain>{heroContent.button2}</ButtonMain>
+								<ButtonMain onClick={() => setModalNeedHelp(true)}>
+									{heroContent.button2}
+								</ButtonMain>
 							</div>
 						</>
-
-						
 					)}
 				</Container>
 			</div>
@@ -103,6 +106,11 @@ const Hero = () => {
 				visible={modalWantToHelp}
 				setVisible={setModalModalWantToHelp}>
 				<WantToHelpForm />
+			</Modal>
+			<Modal
+				visible={modalNeedHelp}
+				setVisible={setModalNeedHelp}>
+				<NeedHelpForm />
 			</Modal>
 		</section>
 	);

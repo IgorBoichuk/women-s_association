@@ -2,12 +2,10 @@ import React, { useEffect } from "react";
 import style from "./Modal.module.scss";
 import sprite from "../../../assets/svg/sprite.svg";
 const Modal = ({ children, visible, setVisible }) => {
-	const rootClassesForOverlay = [style.overlay];
-	const rootClassesForModalContent = [style.modalContent];
-
+	const overlayStyles = [style.overlay, visible ? style.active : ""];
+	const modalContentStyles = [style.modalContent, visible ? style.active : ""];
+	
 	if (visible) {
-		rootClassesForOverlay.push(style.active);
-		rootClassesForModalContent.push(style.active);
 		document.body.classList.add("modal-open");
 	} else {
 		document.body.classList.remove("modal-open");
@@ -27,10 +25,10 @@ const Modal = ({ children, visible, setVisible }) => {
 
 	return (
 		<div
-			className={rootClassesForOverlay.join(" ")}
+			className={overlayStyles.join(" ")}
 			onClick={() => setVisible(false)}>
 			<div
-				className={rootClassesForModalContent.join(" ")}
+				className={modalContentStyles.join(" ")}
 				onClick={(event) => event.stopPropagation()}>
 				{children}
 				<button

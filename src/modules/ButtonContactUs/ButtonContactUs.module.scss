@@ -1,0 +1,37 @@
+@import "../../sass/mixin.scss";
+@import "../../sass/variables.scss";
+
+.buttonContactUs {
+	position: fixed;
+	z-index: 1;
+	bottom: 52%;
+	right: 3%;
+	border: none;
+	padding: 24px;
+	width: 88px;
+	height: 88px;
+	border-radius: 100%;
+	background-color: $gold;
+	transition: all $hoverAnimation;
+
+	svg {
+		stroke: $gold;
+		fill: $black;
+		transition: all $hoverAnimation;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $blue_bright;
+    cursor: pointer;
+
+		svg {
+			stroke: $blue_bright;
+			fill: $white;
+		}
+	}
+
+  @include desktop {
+    bottom: 7%;
+  }
+}
