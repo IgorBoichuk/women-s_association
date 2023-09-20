@@ -1,0 +1,42 @@
+@import "../../../sass/mixin.scss";
+@import "../../../sass/variables.scss";
+
+.section {
+  // background-image: url(../../../assets/img/Invitation/lediesmob.jpg);
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: 100% auto;
+}
+
+.imgWrapper {
+  position: relative;
+  object-fit: contain;
+}
+
+.bgImg {
+  position: absolute;
+  display: block;
+  // width: 420px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-family: Mariupol;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%; /* 28.8px */
+  color: $black;
+}
+
+.description {
+  font-family: Mariupol;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  color: $black;
+}

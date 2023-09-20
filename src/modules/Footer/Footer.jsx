@@ -4,10 +4,12 @@ import { Container } from "../shared/Container/Container";
 import { Logo } from "../shared/Logo/Logo";
 import { Link } from "react-router-dom";
 import { Navigation } from "../shared/Navigation/Navigation";
+import { SocialNetworkIcon } from "../shared/SocialLinks/SocialNetworkIcon";
 import sprite from "../../assets/svg/sprite.svg";
 import ButtonMain from "../shared/ButtonMain/ButtonMain";
 
 export const Footer = () => {
+  const year = new Date().getFullYear();
   return (
     <footer className={style.footer}>
       <Container>
@@ -34,18 +36,18 @@ export const Footer = () => {
                 info.familyato@gmail.com
               </a>
               <div className={style.social}>
-                <Link className={style.socialLink}>
-                  <svg width="32" height="32" className={style.socialIcon}>
-                    <use xlinkHref={`${sprite}#facebook`}></use>
-                  </svg>
-                  <span>Facebook</span>
-                </Link>
-                <Link className={style.socialLink}>
-                  <svg width="32" height="32" className={style.socialIcon}>
-                    <use xlinkHref={`${sprite}#telegram`}></use>
-                  </svg>
-                  <span>Telegram</span>
-                </Link>
+                <SocialNetworkIcon
+                  width="32"
+                  height="32"
+                  socialNetwork="facebook"
+                  description
+                />
+                <SocialNetworkIcon
+                  width="32"
+                  height="32"
+                  socialNetwork="telegram"
+                  description
+                />
               </div>
             </div>
           </div>
@@ -69,7 +71,7 @@ export const Footer = () => {
         </div>
       </Container>
       <span className={style.rights}>
-        © 2023 ОМІДЗУ.{" "}
+        © {year} ОМІДЗУ.
         <Link to="/privacy-policy">Політика конфіденційності</Link>
       </span>
     </footer>

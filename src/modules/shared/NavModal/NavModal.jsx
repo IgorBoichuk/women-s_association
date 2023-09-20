@@ -1,6 +1,6 @@
 import style from "./NavModal.module.scss";
 import { Navigation } from "../Navigation/Navigation";
-import { Facebook } from "../SocialLinks/Facebook";
+import { SocialNetworkIcon } from "../SocialLinks/SocialNetworkIcon";
 import ButtonMain from "../ButtonMain/ButtonMain";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 import ReactDOM from "react-dom";
@@ -30,7 +30,7 @@ export const NavModal = ({ close }) => {
   return ReactDOM.createPortal(
     <div className={style.modalOverlay} onClick={handleOnDropClose}>
       <div className={style.modal}>
-        <Facebook modal />
+        <SocialNetworkIcon socialNetwork="facebook" width="46" height="46" />
         <div className={style.navMenu}>
           <Navigation modal close={close} />
         </div>

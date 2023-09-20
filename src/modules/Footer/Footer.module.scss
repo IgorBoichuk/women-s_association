@@ -102,33 +102,7 @@
 .social {
   display: flex;
   gap: 40px;
-  // justify-content: space-between;
-}
-
-.socialLink {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-
-  font-family: Mariupol;
-  line-height: 150%; /* 24px */
-  color: $black;
-
-  &:hover {
-    color: $blue;
-  }
-  &:focus {
-    color: $blue;
-  }
-}
-
-.socialLink:hover .socialIcon {
-  fill: $blue;
-}
-
-.socialIcon {
-  fill: $gray_dark;
-  margin-right: 8px;
+  // justify-content: space-evenly;
 }
 
 .footerNav {
