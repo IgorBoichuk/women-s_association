@@ -6,10 +6,13 @@ import Stories from "../modules/Home/Stories/Stories";
 import { Statistics } from "../modules/Home/Statistics/Statistics";
 
 import { Invitation } from "../modules/Home/Invitation/Invitation";
-import ButtonContactUs from "../modules/ButtonContactUs/ButtonContactUs";
+import ButtonContactUs from "../modules/Home/ButtonContactUs/ButtonContactUs";
+import Modal from "../modules/shared/Modal/Modal";
+import PartnerForm from "../modules/shared/Modal/PartnerForm/PartnerForm";
 
 export const Home = () => {
 	const [isVisible, setIsVisible] = useState(true);
+	const [modalPartner, setModalPartner] = useState(false);
 	return (
 		<>
 			{/* <NavModal /> */}
@@ -23,7 +26,12 @@ export const Home = () => {
 				onExit={() => setIsVisible(true)}>
 				<div></div>
 			</ScrollTrigger>
-			{isVisible && <ButtonContactUs />}
+			{isVisible && <ButtonContactUs onClick={() => setModalPartner(true)} />}
+			<Modal
+				visible={modalPartner}
+				setVisible={setModalPartner}>
+				<PartnerForm />
+			</Modal>
 		</>
 	);
 };

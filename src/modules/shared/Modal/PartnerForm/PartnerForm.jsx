@@ -1,22 +1,22 @@
 import React from "react";
-import style from "./WantToHelpForm.module.scss";
+import style from "./PartnerForm.module.scss";
 import { Formik, Form, Field } from "formik";
 import validationFullNameAndPhoneNumber from "../../../../helpers/schema/validationFullNameAndPhoneNumber";
 import sprite from "../../../../assets/svg/sprite.svg";
 import ButtonMain from "../../ButtonMain/ButtonMain";
 
-const WantToHelpForm = () => {
+const PartnerForm = () => {
 	const validationSchema = validationFullNameAndPhoneNumber;
 
 	return (
 		<div className={style.container}>
-			<h3 className={style.title}>Я хочу допомогти</h3>
+			<h3 className={style.title}>Я хочу стати партнером</h3>
 			<Formik
 				validationSchema={validationSchema}
 				initialValues={{
 					fullName: "",
 					mobile: "",
-					checkboxes: [false, false, false, false, false],
+					checkboxes: [false, false, false, false],
 				}}
 				onSubmit={(values) => {
 					console.log("submit", values);
@@ -65,7 +65,7 @@ const WantToHelpForm = () => {
 							<div className={style.errorPlaceHolder}></div>
 						)}
 						<h4 className={style.subTitle}>
-							В якому напрямку Ви б хотіли допомогти?
+							В якому напрямку Вам була б цікава співпраця?
 						</h4>
 						{errors.checkboxes && touched.checkboxes ? (
 							<div className={style.error}>
@@ -89,7 +89,7 @@ const WantToHelpForm = () => {
 									<div className={style.notChecked}></div>
 								)}
 								<span className={style.checkBoxDescription}>
-									адвокаційна підтримка
+									юридична допомога
 								</span>
 							</label>
 							<label className={style.checkboxLabel}>
@@ -106,7 +106,7 @@ const WantToHelpForm = () => {
 									<div className={style.notChecked}></div>
 								)}
 								<span className={style.checkBoxDescription}>
-									допомога в реабілітаційному напрямку
+									соціально-реабілітаційна допомога
 								</span>
 							</label>
 							<label className={style.checkboxLabel}>
@@ -143,21 +143,6 @@ const WantToHelpForm = () => {
 									допомога з працевлаштуванням (власною справою)
 								</span>
 							</label>
-							<label className={style.checkboxLabel}>
-								<Field
-									className={style.checkboxInput}
-									type='checkbox'
-									name='checkboxes[4]'
-								/>{" "}
-								{values.checkboxes[4] ? ( // Проверяем значение чекбокса
-									<svg className={style.icon}>
-										<use xlinkHref={`${sprite}#icon-checkbox-checked`}></use>
-									</svg>
-								) : (
-									<div className={style.notChecked}></div>
-								)}
-								<span className={style.checkBoxDescription}>інше</span>
-							</label>
 						</div>
 						{!dirty || !isValid ? (
 							<button className={style.buttonDisabled}>Відправити</button>
@@ -175,4 +160,4 @@ const WantToHelpForm = () => {
 	);
 };
 
-export default WantToHelpForm;
+export default PartnerForm;

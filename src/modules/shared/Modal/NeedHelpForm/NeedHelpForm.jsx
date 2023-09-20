@@ -51,7 +51,7 @@ const NeedHelpForm = () => {
 						<label>
 							<Field
 								className={`${style.field} ${
-									errors.fullName && touched.fullName ? style.errorInput : ""
+									errors.mobile && touched.mobile ? style.errorInput : ""
 								}`}
 								name='mobile'
 								placeholder='Ваш контактний номер'
