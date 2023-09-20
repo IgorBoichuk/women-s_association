@@ -3,8 +3,6 @@
 
 .navList {
   list-style: none;
-  // gap: 40px;
-
   font-family: Mariupol;
   font-size: 20px;
   line-height: 150%; /* 30px */
@@ -21,7 +19,6 @@
 
 .navListFooter {
   list-style: none;
-
   font-family: Mariupol;
   font-size: 20px;
   line-height: 150%; /* 30px */
@@ -33,7 +30,6 @@
 }
 
 .skeletonWrapper {
-  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,15 +38,16 @@
 
 .navItem {
   padding: 12px 4px 12px 4px;
+  box-sizing: border-box;
   border-bottom: 2px solid transparent;
+  &:hover {
+    padding-bottom: 12px;
+    padding-top: 8px;
+    border-bottom: 2px solid $blue_bright;
+  }
 }
 
 .navLink {
   text-decoration: none;
   color: $black;
-  &:hover {
-    padding-bottom: 12px;
-    border-bottom: 2px solid $blue_bright;
-    // outline: 2px solid black;
-  }
 }
