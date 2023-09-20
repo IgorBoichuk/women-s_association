@@ -1,5 +1,4 @@
 import React from "react";
-import classnames from "classnames";
 import style from "./WantToHelpForm.module.scss";
 import { Formik, Form, Field } from "formik";
 import validationFullNameAndPhoneNumber from "../../../../helpers/schema/validationFullNameAndPhoneNumber";
@@ -24,17 +23,15 @@ const WantToHelpForm = () => {
 				}}>
 				{({ errors, touched, values, isValid, dirty }) => (
 					<Form className={style.form}>
-						<label
-							className={classnames(style.label, {
-								[style.errorLabel]: errors.fullName && touched.fullName,
-							})}></label>
-						<Field
-							className={classnames(style.field, {
-								[style.errorInput]: errors.fullName && touched.fullName,
-							})}
-							name='fullName'
-							placeholder='ПІБ'
-						/>
+						<label>
+							<Field
+								className={`${style.field} ${
+									errors.fullName && touched.fullName ? style.errorInput : ""
+								}`}
+								name='fullName'
+								placeholder='ПІБ'
+							/>
+						</label>
 						{errors.fullName && touched.fullName ? (
 							<div
 								className={style.error}
@@ -51,17 +48,15 @@ const WantToHelpForm = () => {
 							</>
 						)}
 
-						<label
-							className={classnames(style.label, {
-								[style.errorLabel]: errors.mobile && touched.mobile,
-							})}></label>
-						<Field
-							className={classnames(style.field, {
-								[style.errorInput]: errors.mobile && touched.mobile,
-							})}
-							name='mobile'
-							placeholder='Ваш контактний номер'
-						/>
+						<label>
+							<Field
+								className={`${style.field} ${
+									errors.fullName && touched.fullName ? style.errorInput : ""
+								}`}
+								name='mobile'
+								placeholder='Ваш контактний номер'
+							/>
+						</label>
 						{errors.mobile && touched.mobile ? (
 							<div className={style.error}>
 								<span>{errors.mobile}</span>
@@ -120,7 +115,7 @@ const WantToHelpForm = () => {
 									type='checkbox'
 									name='checkboxes[2]'
 								/>{" "}
-								{values.checkboxes[2] ? ( // Проверяем значение чекбокса
+								{values.checkboxes[2] ? (
 									<svg className={style.icon}>
 										<use xlinkHref={`${sprite}#icon-checkbox-checked`}></use>
 									</svg>
