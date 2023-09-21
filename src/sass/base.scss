@@ -3,31 +3,28 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  font-weight: normal;
-  font-style: normal;
-  font-family: "Mariupol";
+	box-sizing: border-box;
+	font-weight: normal;
+	font-style: normal;
+	font-family: "Mariupol";
 }
 
 html::-webkit-scrollbar {
-  width: 14px;
+	width: 14px;
 }
 html::-webkit-scrollbar-thumb {
-  background-color: $gray_dark;
-  border-radius: 4px;
-  transition: all $hoverAnimation;
-  cursor: pointer;
+	background-color: $gray_dark;
+	border-radius: 4px;
+	transition: all $hoverAnimation;
+	cursor: pointer;
 }
 html::-webkit-scrollbar-thumb:hover {
-  background-color: $black;
+	background-color: $black;
 }
-
 
 .modal-open {
-    overflow: hidden;
+	overflow: hidden;
 }
-
-
 
 body,
 h1,
@@ -43,62 +40,59 @@ figcaption,
 blockquote,
 dl,
 dd {
-  margin: 0;
+	margin: 0;
 }
 
 body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-
-ul[class],
-ol[class] {
-  padding: 0;
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
 }
 
 ul[class],
 ol[class] {
-  list-style: none;
+	padding: 0;
+}
+
+ul[class],
+ol[class] {
+	list-style: none;
 }
 
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+	text-decoration-skip-ink: auto;
 }
 
 img {
-  max-width: 100%;
-  display: block;
+	max-width: 100%;
+	display: block;
 }
 
 article > * + * {
-  margin-top: 1em;
+	margin-top: 1em;
 }
 
 input,
 button,
 textarea,
 select {
-  font: inherit;
+	font: inherit;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
 
-
-
 li > .active {
-  padding-bottom: 12px;
-  font-weight: 500;
-  border-bottom: 2px solid $blue_bright;
+	padding-bottom: 12px;
+	font-weight: 500;
+	border-bottom: 2px solid $blue_bright;
 }
 
 

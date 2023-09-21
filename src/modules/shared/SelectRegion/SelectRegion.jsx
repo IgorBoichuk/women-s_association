@@ -8,6 +8,8 @@ const customStyles = {
 		borderRadius: "8px",
 		boxShadow: "none",
 	}),
+
+	
 	option: (provided, state) => ({
 		...provided,
 		backgroundColor: state.isSelected ? "#9D9D9D" : "white",
@@ -29,15 +31,19 @@ const customStyles = {
 	}),
 };
 
+
+
 const SelectRegion = ({ value, onChange, options }) => {
 	return (
-		<Select
-			value={value}
-			onChange={onChange}
-			options={options}
-			styles={customStyles}
-			placeholder='Вкажіть область проживання'
-		/>
+		
+			<Select
+				value={value}
+				onChange={onChange}
+				options={options}
+				styles={customStyles}
+				placeholder='Вкажіть область проживання'
+			/>
+	
 	);
 };
 

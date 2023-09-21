@@ -9,9 +9,31 @@ import fullNameWithSelectAnd2Checkbox from "../../../../helpers/schema/fullNameW
 const NeedHelpForm = ({ modalClose }) => {
 	const validationSchema = fullNameWithSelectAnd2Checkbox;
 	const regionOptions = [
-		{ value: "kyiv", label: "Киев" },
-		{ value: "lviv", label: "Львов" },
-		{ value: "odessa", label: "Одесса" },
+		{ value: "Autonomous Republic of Crimea", label: "АР Крим" },
+		{ value: "Vinnytska", label: "Вінницька" },
+		{ value: "Volynska", label: "Волинська" },
+		{ value: "Dnipropetrovska", label: "Дніпропетровська" },
+		{ value: "Donetska", label: "Донецька" },
+		{ value: "Zhytomyrska", label: "Житомирська" },
+		{ value: "Zakarpatska", label: "Закарпатська" },
+		{ value: "Zaporizka", label: "Запорізька" },
+		{ value: "Ivano-Frankivska", label: "Івано-Франківська" },
+		{ value: "Kyivska", label: "Київська" },
+		{ value: "Kirovohradska", label: "Кіровоградська" },
+		{ value: "Luhanska", label: "Луганська" },
+		{ value: "Lvivska", label: "Львівська" },
+		{ value: "Mykolaivska", label: "Миколаївська" },
+		{ value: "Odeska", label: "Одеська" },
+		{ value: "Poltavska", label: "Полтавська" },
+		{ value: "Rivnenska", label: "Рівненська" },
+		{ value: "Sumska", label: "Сумська" },
+		{ value: "Ternopilska", label: "Тернопільська" },
+		{ value: "Kharkivska", label: "Харківська" },
+		{ value: "Khersonska", label: "Херсонська" },
+		{ value: "Khmelnytska", label: "Хмельницька" },
+		{ value: "Cherkaska", label: "Черкаська" },
+		{ value: "Chernivetska", label: "Чернівецька" },
+		{ value: "Chernihivska", label: "Чернігівська" },
 	];
 
 	return (
@@ -27,6 +49,27 @@ const NeedHelpForm = ({ modalClose }) => {
 					checkboxes1: [false, false, false, false],
 				}}
 				onSubmit={(values, { resetForm }) => {
+					const config = {
+						Username: "info.familyato@gmail.com",
+						Password: "AAE1D7E34CFB57C164D38AF9DB7058A70913",
+						Host: "smtp.elasticemail.com",
+						Port: 2525,
+
+						SecurityToken: "87bd5888-2366-40da-b272-7ea29bd14c65",
+						To: "vazhachkimikocha@gmail.com",
+						From: "info.familyato@gmail.com",
+						Subject: "This is the subject",
+						Body: `${values}`,
+					};
+					if (window.Email) {
+						console.log(`window Email is present`);
+						try {
+							window.Email.send(config);
+							alert(`Email sent successfully`);
+						} catch (error) {
+							console.log(error);
+						}
+					}
 					console.log("form", values);
 					resetForm();
 					modalClose();
