@@ -50,12 +50,12 @@ const NeedHelpForm = ({ modalClose }) => {
 				}}
 				onSubmit={(values, { resetForm }) => {
 					const config = {
-						Username: "info.familyato@gmail.com",
-						Password: "AAE1D7E34CFB57C164D38AF9DB7058A70913",
-						Host: "smtp.elasticemail.com",
-						Port: 2525,
+						// Username: "info.familyato@gmail.com",
+						// Password: "B5C19DC83206FC363135826B4CA4F46C88A2",
+						// Host: "smtp.elasticemail.com",
+						// Port: 2525,
 
-						SecurityToken: "87bd5888-2366-40da-b272-7ea29bd14c65",
+						SecurityToken: "a520f5f1-64f2-415b-8245-73515abd4572 ",
 						To: "vazhachkimikocha@gmail.com",
 						From: "info.familyato@gmail.com",
 						Subject: "This is the subject",
@@ -75,7 +75,7 @@ const NeedHelpForm = ({ modalClose }) => {
 					modalClose();
 
 
-					
+
 				}}
 				validateOnChange={true}>
 				{({ errors, touched, values, isValid, dirty, setFieldValue }) => (
