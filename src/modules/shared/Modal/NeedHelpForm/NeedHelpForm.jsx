@@ -73,6 +73,9 @@ const NeedHelpForm = ({ modalClose }) => {
 					console.log("form", values);
 					resetForm();
 					modalClose();
+
+
+					
 				}}
 				validateOnChange={true}>
 				{({ errors, touched, values, isValid, dirty, setFieldValue }) => (
