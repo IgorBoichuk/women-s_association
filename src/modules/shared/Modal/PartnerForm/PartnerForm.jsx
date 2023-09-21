@@ -5,7 +5,7 @@ import validationFullNameAndPhoneNumber from "../../../../helpers/schema/validat
 import sprite from "../../../../assets/svg/sprite.svg";
 import ButtonMain from "../../ButtonMain/ButtonMain";
 
-const PartnerForm = () => {
+const PartnerForm = ({ modalClose }) => {
 	const validationSchema = validationFullNameAndPhoneNumber;
 
 	return (
@@ -18,8 +18,10 @@ const PartnerForm = () => {
 					mobile: "",
 					checkboxes: [false, false, false, false],
 				}}
-				onSubmit={(values) => {
-					console.log("submit", values);
+				onSubmit={(values, { resetForm }) => {
+					console.log("form", values);
+					resetForm();
+					modalClose();
 				}}>
 				{({ errors, touched, values, isValid, dirty }) => (
 					<Form className={style.form}>

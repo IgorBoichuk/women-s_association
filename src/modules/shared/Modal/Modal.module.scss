@@ -15,31 +15,39 @@
 	background: rgba(0, 0, 0, 0.8);
 
 	.modalContent {
-		
-		overflow: hidden;
+		max-height: 80vh;
+		max-width: 300px;
+		overflow: auto;
+
 		position: relative;
 		opacity: 0;
-		padding: 4px;
+		background: $white;
+		border-radius: 8px;
+		transition: opacity $hoverAnimation;
+		padding: 8px;
 		@include mobileBig {
+			max-width: none;
 			padding: 16px;
 		}
 		@include tablet {
 			padding: 32px;
 		}
 		@include desktop {
-			
 			padding: 100px;
-			padding-top: 16px;
-			padding-bottom: 16px;
 		}
-		@include desktopWide {
-			
-			
+
+		&::-webkit-scrollbar {
+			width: 8px;
 		}
-		background: $white;
-		border-radius: 8px;
-		transition: opacity $hoverAnimation;
-		
+		&::-webkit-scrollbar-thumb {
+			background-color: $gray_dark;
+			border-radius: 4px;
+			transition: all $hoverAnimation;
+			cursor: pointer;
+		}
+		&::-webkit-scrollbar-thumb:hover {
+			background-color: $black;
+		}
 	}
 }
 

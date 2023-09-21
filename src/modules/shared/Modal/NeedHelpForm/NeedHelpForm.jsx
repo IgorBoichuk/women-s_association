@@ -1,27 +1,38 @@
 import React from "react";
 import style from "./NeedHelpForm.module.scss";
 import { Formik, Form, Field } from "formik";
-import validationFullNameAndPhoneNumber from "../../../../helpers/schema/validationFullNameAndPhoneNumber";
 import sprite from "../../../../assets/svg/sprite.svg";
 import ButtonMain from "../../ButtonMain/ButtonMain";
+import SelectRegion from "../../SelectRegion/SelectRegion";
+import fullNameWithSelectAnd2Checkbox from "../../../../helpers/schema/fullNameWithSelectAnd2Checkbox";
 
-const NeedHelpForm = () => {
-	const validationSchema = validationFullNameAndPhoneNumber;
+const NeedHelpForm = ({ modalClose }) => {
+	const validationSchema = fullNameWithSelectAnd2Checkbox;
+	const regionOptions = [
+		{ value: "kyiv", label: "Киев" },
+		{ value: "lviv", label: "Львов" },
+		{ value: "odessa", label: "Одесса" },
+	];
 
 	return (
 		<div className={style.container}>
-			<h3 className={style.title}>ЧУЧУКА</h3>
+			<h3 className={style.title}>Я потребую допомоги</h3>
 			<Formik
 				validationSchema={validationSchema}
 				initialValues={{
 					fullName: "",
 					mobile: "",
-					checkboxes: [false, false, false, false, false],
+					checkboxes: [false, false, false, false],
+					region: null,
+					checkboxes1: [false, false, false, false],
 				}}
-				onSubmit={(values) => {
-					console.log("submit", values);
-				}}>
-				{({ errors, touched, values, isValid, dirty }) => (
+				onSubmit={(values, { resetForm }) => {
+					console.log("form", values);
+					resetForm();
+					modalClose();
+				}}
+				validateOnChange={true}>
+				{({ errors, touched, values, isValid, dirty, setFieldValue }) => (
 					<Form className={style.form}>
 						<label>
 							<Field
@@ -64,9 +75,7 @@ const NeedHelpForm = () => {
 						) : (
 							<div className={style.errorPlaceHolder}></div>
 						)}
-						<h4 className={style.subTitle}>
-							В якому напрямку Ви б хотіли допомогти?
-						</h4>
+						<h4 className={style.subTitle}>Який статус має ваша родина?</h4>
 						{errors.checkboxes && touched.checkboxes ? (
 							<div className={style.error}>
 								<span>{errors.checkboxes}</span>
@@ -89,7 +98,7 @@ const NeedHelpForm = () => {
 									<div className={style.notChecked}></div>
 								)}
 								<span className={style.checkBoxDescription}>
-									адвокаційна підтримка
+									родина діючого військового
 								</span>
 							</label>
 							<label className={style.checkboxLabel}>
@@ -106,7 +115,7 @@ const NeedHelpForm = () => {
 									<div className={style.notChecked}></div>
 								)}
 								<span className={style.checkBoxDescription}>
-									допомога в реабілітаційному напрямку
+									родина ветерана
 								</span>
 							</label>
 							<label className={style.checkboxLabel}>
@@ -123,7 +132,7 @@ const NeedHelpForm = () => {
 									<div className={style.notChecked}></div>
 								)}
 								<span className={style.checkBoxDescription}>
-									гуманітарна допомога
+									родина загиблого чи зниклого безвісті військового
 								</span>
 							</label>
 							<label className={style.checkboxLabel}>
@@ -139,26 +148,99 @@ const NeedHelpForm = () => {
 								) : (
 									<div className={style.notChecked}></div>
 								)}
-								<span className={style.checkBoxDescription}>
-									допомога з працевлаштуванням (власною справою)
-								</span>
+								<span className={style.checkBoxDescription}>інше</span>
 							</label>
+						</div>
+
+						<label className={style.selectLabel}>
+							<SelectRegion
+								value={values.region}
+								onChange={(value) => setFieldValue("region", value)}
+								options={regionOptions}
+							/>
+						</label>
+
+						<h4 className={style.subTitle}>
+							В якому напрямку Вам потрібна допомога?
+						</h4>
+						{errors.checkboxes1 && touched.checkboxes1 ? (
+							<div className={style.error}>
+								<span>{errors.checkboxes1}</span>
+							</div>
+						) : (
+							<div className={style.errorPlaceHolder}></div>
+						)}
+						<div className={style.checkboxGroup}>
 							<label className={style.checkboxLabel}>
 								<Field
 									className={style.checkboxInput}
 									type='checkbox'
-									name='checkboxes[4]'
+									name='checkboxes1[0]'
 								/>{" "}
-								{values.checkboxes[4] ? ( // Проверяем значение чекбокса
+								{values.checkboxes1[0] ? (
 									<svg className={style.icon}>
 										<use xlinkHref={`${sprite}#icon-checkbox-checked`}></use>
 									</svg>
 								) : (
 									<div className={style.notChecked}></div>
 								)}
-								<span className={style.checkBoxDescription}>інше</span>
+								<span className={style.checkBoxDescription}>
+									юридична допомога
+								</span>
+							</label>
+							<label className={style.checkboxLabel}>
+								<Field
+									className={style.checkboxInput}
+									type='checkbox'
+									name='checkboxes1[1]'
+								/>{" "}
+								{values.checkboxes1[1] ? (
+									<svg className={style.icon}>
+										<use xlinkHref={`${sprite}#icon-checkbox-checked`}></use>
+									</svg>
+								) : (
+									<div className={style.notChecked}></div>
+								)}
+								<span className={style.checkBoxDescription}>
+									соціально-реабілітаційниа допомога
+								</span>
+							</label>
+							<label className={style.checkboxLabel}>
+								<Field
+									className={style.checkboxInput}
+									type='checkbox'
+									name='checkboxes1[2]'
+								/>{" "}
+								{values.checkboxes1[2] ? (
+									<svg className={style.icon}>
+										<use xlinkHref={`${sprite}#icon-checkbox-checked`}></use>
+									</svg>
+								) : (
+									<div className={style.notChecked}></div>
+								)}
+								<span className={style.checkBoxDescription}>
+									гуманітарна допомога
+								</span>
+							</label>
+							<label className={style.checkboxLabel}>
+								<Field
+									className={style.checkboxInput}
+									type='checkbox'
+									name='checkboxes1[3]'
+								/>{" "}
+								{values.checkboxes1[3] ? (
+									<svg className={style.icon}>
+										<use xlinkHref={`${sprite}#icon-checkbox-checked`}></use>
+									</svg>
+								) : (
+									<div className={style.notChecked}></div>
+								)}
+								<span className={style.checkBoxDescription}>
+									допомога у працевлаштуванні (відкритті власної справи)
+								</span>
 							</label>
 						</div>
+
 						{!dirty || !isValid ? (
 							<button className={style.buttonDisabled}>Відправити</button>
 						) : (

@@ -1,7 +1,7 @@
 @import "../../../../sass/variables.scss";
 @import "../../../../sass/mixin.scss";
 .container {
-	// border: 1px solid red;
+	height: 100%;
 }
 
 .title {
@@ -91,10 +91,13 @@
 		gap: 8px;
 	}
 
-	margin-bottom: 12px;
+	margin-bottom: 14px;
+	@include desktop {
+		margin-bottom: 24px;
+	}
 
 	@include desktopWide {
-		margin-bottom: 40px;
+		
 		gap: 24px;
 	}
 }
@@ -149,6 +152,11 @@
 	@include desktop {
 		font-size: 20px;
 	}
+}
+
+.selectLabel {
+	width: 100%;
+margin-bottom: 24px;
 }
 
 .notChecked {

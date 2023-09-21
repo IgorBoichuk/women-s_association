@@ -105,12 +105,12 @@ const Hero = () => {
 			<Modal
 				visible={modalWantToHelp}
 				setVisible={setModalModalWantToHelp}>
-				<WantToHelpForm />
+				<WantToHelpForm modalClose={() => setModalModalWantToHelp(false)} />
 			</Modal>
 			<Modal
 				visible={modalNeedHelp}
 				setVisible={setModalNeedHelp}>
-				<NeedHelpForm />
+				<NeedHelpForm modalClose={() => setModalNeedHelp(false)} />
 			</Modal>
 		</section>
 	);

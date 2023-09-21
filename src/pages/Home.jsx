@@ -30,7 +30,7 @@ export const Home = () => {
 			<Modal
 				visible={modalPartner}
 				setVisible={setModalPartner}>
-				<PartnerForm />
+				<PartnerForm modalClose={() => setModalPartner(false)} />
 			</Modal>
 		</>
 	);

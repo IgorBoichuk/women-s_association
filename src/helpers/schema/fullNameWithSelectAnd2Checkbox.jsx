@@ -1,7 +1,6 @@
 import * as yup from "yup";
 
-const validationFullNameAndPhoneNumber = yup.object().shape({
-	// Фамилия, имя, отчество
+const fullNameWithSelectAnd2Checkbox = yup.object().shape({
 	fullName: yup
 		.string()
 		.required(
@@ -14,8 +13,6 @@ const validationFullNameAndPhoneNumber = yup.object().shape({
 		)
 		.min(2, "Мінімальна довжина рядка – 2 символа")
 		.max(255, "Максимальна довжина рядка - 255 символів"),
-
-	// Мобильный номер
 	mobile: yup
 		.string()
 		.required(`Рядок мобільний номер є обов'язковим для заповнення`)
@@ -28,9 +25,13 @@ const validationFullNameAndPhoneNumber = yup.object().shape({
 		.test("atLeastOneChecked", "Оберіть хочаб один варіант", (value) =>
 			value.some((isChecked) => isChecked === true)
 		),
-	// region: yup.string().required("Выберите область Украины"),
+	region: yup.object(),
+	checkboxes1: yup
+		.array()
+		.of(yup.boolean())
+		.test("atLeastOneChecked", "Оберіть хочаб один варіант", (value) =>
+			value.some((isChecked) => isChecked === true)
+		),
 });
 
-export default validationFullNameAndPhoneNumber;
-
-
+export default fullNameWithSelectAnd2Checkbox;
