@@ -2,27 +2,39 @@
 @import "../../../sass/variables.scss";
 
 .section {
-  // background-image: url(../../../assets/img/Invitation/lediesmob.jpg);
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-size: 100% auto;
-}
+  padding: 60px 0;
 
-.imgWrapper {
-  position: relative;
-  object-fit: contain;
-}
-
-.bgImg {
-  position: absolute;
-  display: block;
-  // width: 420px;
+  background-image: url(../../../assets/img/Invitation/lediesmob.jpg);
+  background-position: 0 120px;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  @include tablet {
+    background-image: url(../../../assets/img/Invitation/ledies_desc.jpg);
+  }
+  @include tabletHorizontal {
+  }
+  @include desktop {
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  height: calc(395px + (100vw * 0.65));
+  @include tablet {
+    height: calc(250px + (99vw * 0.48));
+  }
+  @include tabletHorizontal {
+    height: calc(240px + (100vw * 0.45));
+  }
+  @include desktop {
+    justify-content: center;
+    height: auto;
+    padding: 200px 0;
+  }
 }
 
 .title {
@@ -31,6 +43,31 @@
   font-weight: 500;
   line-height: 120%; /* 28.8px */
   color: $black;
+  text-align: center;
+  @include tablet {
+    font-size: 28px;
+  }
+  @include desktop {
+    color: $white;
+    font-size: 46px;
+    margin-bottom: 20px;
+  }
+}
+
+.descriptionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @include tablet {
+    width: 60%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+  @include tablet {
+    width: 55%;
+  }
 }
 
 .description {
@@ -39,4 +76,12 @@
   font-weight: 400;
   line-height: 150%; /* 24px */
   color: $black;
+  @include tablet {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  @include desktop {
+    color: $white;
+    font-size: 24px;
+  }
 }

@@ -9,10 +9,9 @@
     max-height: 100%;
   }
   @include tablet {
-    
     max-height: 807px;
-   padding: 0 24px;
-   padding-bottom: 120px;
+    padding: 0 24px;
+    padding-bottom: 120px;
   }
   @include desktop {
     min-height: 999px;
@@ -46,8 +45,8 @@
 
 .photo {
   border-radius: 20px 20px 0px 0px;
-  background: url("../../../assets/img/stories/storie.png") lightgray 50% /
-    cover no-repeat;
+  background: url("../../../assets/img/stories/storie.png") 50% / cover
+    no-repeat;
   background-position-y: inherit;
   max-height: 100%;
   width: 100%;

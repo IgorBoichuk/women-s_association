@@ -2,36 +2,57 @@
 @import "../../../sass/variables.scss";
 
 .buttonContactUs {
-	position: fixed;
-	z-index: 1;
-	bottom: 52%;
-	right: 3%;
-	border: none;
-	padding: 24px;
-	width: 88px;
-	height: 88px;
-	border-radius: 100%;
-	background-color: $gold;
-	transition: all $hoverAnimation;
+  position: fixed;
+  z-index: 1;
+  bottom: 3%;
+  right: 3%;
+  border: none;
+  padding: 24px;
+  //   width: 88px;
+  // height: 88px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: $gold;
+  transition: all $hoverAnimation;
 
-	svg {
-		stroke: $gold;
-		fill: $black;
-		transition: all $hoverAnimation;
-	}
+  svg {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 30%;
+    stroke: $gold;
+    fill: $black;
+    transition: all $hoverAnimation;
+    @include tablet {
+      width: 35px;
+      height: 35px;
+    }
+    @include desktop {
+      width: 45px;
+      height: 45px;
+    }
+  }
 
-	&:hover,
-	&:focus {
-		background-color: $blue_bright;
+  &:hover,
+  &:focus {
+    background-color: $blue_bright;
     cursor: pointer;
 
-		svg {
-			stroke: $blue_bright;
-			fill: $white;
-		}
-	}
+    svg {
+      stroke: $blue_bright;
+      fill: $white;
+    }
+  }
+
+  @include tablet {
+    width: 65px;
+    height: 65px;
+  }
 
   @include desktop {
     bottom: 7%;
+    width: 88px;
+    height: 88px;
   }
 }
