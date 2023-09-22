@@ -10,11 +10,14 @@ import ButtonContactUs from "../modules/Home/ButtonContactUs/ButtonContactUs";
 import Modal from "../modules/shared/Modal/Modal";
 import PartnerForm from "../modules/shared/Modal/PartnerForm/PartnerForm";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export const Home = () => {
 	const [isVisible, setIsVisible] = useState(true);
 	const [modalPartner, setModalPartner] = useState(false);
 	return (
 		<>
+			<ToastContainer />
 			{/* <NavModal /> */}
 			<Hero />
 			<OurAchievements />

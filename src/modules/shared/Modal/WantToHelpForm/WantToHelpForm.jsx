@@ -4,6 +4,8 @@ import { Formik, Form, Field } from "formik";
 import validationFullNameAndPhoneNumber from "../../../../helpers/schema/validationFullNameAndPhoneNumber";
 import sprite from "../../../../assets/svg/sprite.svg";
 import ButtonMain from "../../ButtonMain/ButtonMain";
+import { messageWantToHelpFormatter } from "../../../../helpers/utils/messageWantToHelpFormatter";
+import { sendEmail } from "../../../../api/messageSender";
 
 const WantToHelpForm = ({ modalClose }) => {
 	const validationSchema = validationFullNameAndPhoneNumber;
@@ -19,7 +21,8 @@ const WantToHelpForm = ({ modalClose }) => {
 					checkboxes: [false, false, false, false, false],
 				}}
 				onSubmit={(values, { resetForm }) => {
-					console.log("form", values);
+					const message = messageWantToHelpFormatter(values);
+					sendEmail(message, "Я хочу допомоги");
 					resetForm();
 					modalClose();
 				}}>

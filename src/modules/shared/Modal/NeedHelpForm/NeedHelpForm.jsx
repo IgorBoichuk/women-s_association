@@ -5,39 +5,16 @@ import sprite from "../../../../assets/svg/sprite.svg";
 import ButtonMain from "../../ButtonMain/ButtonMain";
 import SelectRegion from "../../SelectRegion/SelectRegion";
 import fullNameWithSelectAnd2Checkbox from "../../../../helpers/schema/fullNameWithSelectAnd2Checkbox";
+import { messageNeedHelpFormatter } from "../../../../helpers/utils/messageNeedHelpFormatter";
+import { sendEmail } from "../../../../api/messageSender";
 
 const NeedHelpForm = ({ modalClose }) => {
 	const validationSchema = fullNameWithSelectAnd2Checkbox;
-	const regionOptions = [
-		{ value: "Autonomous Republic of Crimea", label: "АР Крим" },
-		{ value: "Vinnytska", label: "Вінницька" },
-		{ value: "Volynska", label: "Волинська" },
-		{ value: "Dnipropetrovska", label: "Дніпропетровська" },
-		{ value: "Donetska", label: "Донецька" },
-		{ value: "Zhytomyrska", label: "Житомирська" },
-		{ value: "Zakarpatska", label: "Закарпатська" },
-		{ value: "Zaporizka", label: "Запорізька" },
-		{ value: "Ivano-Frankivska", label: "Івано-Франківська" },
-		{ value: "Kyivska", label: "Київська" },
-		{ value: "Kirovohradska", label: "Кіровоградська" },
-		{ value: "Luhanska", label: "Луганська" },
-		{ value: "Lvivska", label: "Львівська" },
-		{ value: "Mykolaivska", label: "Миколаївська" },
-		{ value: "Odeska", label: "Одеська" },
-		{ value: "Poltavska", label: "Полтавська" },
-		{ value: "Rivnenska", label: "Рівненська" },
-		{ value: "Sumska", label: "Сумська" },
-		{ value: "Ternopilska", label: "Тернопільська" },
-		{ value: "Kharkivska", label: "Харківська" },
-		{ value: "Khersonska", label: "Херсонська" },
-		{ value: "Khmelnytska", label: "Хмельницька" },
-		{ value: "Cherkaska", label: "Черкаська" },
-		{ value: "Chernivetska", label: "Чернівецька" },
-		{ value: "Chernihivska", label: "Чернігівська" },
-	];
 
 	return (
 		<div className={style.container}>
+		
+			
 			<h3 className={style.title}>Я потребую допомоги</h3>
 			<Formik
 				validationSchema={validationSchema}
@@ -49,34 +26,10 @@ const NeedHelpForm = ({ modalClose }) => {
 					checkboxes1: [false, false, false, false],
 				}}
 				onSubmit={(values, { resetForm }) => {
-					const config = {
-						// Username: "info.familyato@gmail.com",
-						// Password: "B5C19DC83206FC363135826B4CA4F46C88A2",
-						// Host: "smtp.elasticemail.com",
-						// Port: 2525,
-
-						
-						SecurityToken: "a520f5f1-64f2-415b-8245-73515abd4572 ",
-						To: "vazhachkimikocha@gmail.com",
-						From: "info.familyato@gmail.com",
-						Subject: "This is the subject",
-						Body: `${values}`,
-					};
-					if (window.Email) {
-						console.log(`window Email is present`);
-						try {
-							window.Email.send(config);
-							alert(`Email sent successfully`);
-						} catch (error) {
-							console.log(error);
-						}
-					}
-					console.log("form", values);
+					const message = messageNeedHelpFormatter(values);
+					sendEmail(message, "Я потребую допомоги");
 					resetForm();
 					modalClose();
-
-
-
 				}}
 				validateOnChange={true}>
 				{({ errors, touched, values, isValid, dirty, setFieldValue }) => (
@@ -203,7 +156,6 @@ const NeedHelpForm = ({ modalClose }) => {
 							<SelectRegion
 								value={values.region}
 								onChange={(value) => setFieldValue("region", value)}
-								options={regionOptions}
 							/>
 						</label>
 

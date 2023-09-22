@@ -9,7 +9,6 @@ const customStyles = {
 		boxShadow: "none",
 	}),
 
-	
 	option: (provided, state) => ({
 		...provided,
 		backgroundColor: state.isSelected ? "#9D9D9D" : "white",
@@ -31,19 +30,42 @@ const customStyles = {
 	}),
 };
 
-
-
-const SelectRegion = ({ value, onChange, options }) => {
+const SelectRegion = ({ value, onChange }) => {
+	const regionOptions = [
+		{ value: "Autonomous Republic of Crimea", label: "АР Крим" },
+		{ value: "Vinnytska", label: "Вінницька" },
+		{ value: "Volynska", label: "Волинська" },
+		{ value: "Dnipropetrovska", label: "Дніпропетровська" },
+		{ value: "Donetska", label: "Донецька" },
+		{ value: "Zhytomyrska", label: "Житомирська" },
+		{ value: "Zakarpatska", label: "Закарпатська" },
+		{ value: "Zaporizka", label: "Запорізька" },
+		{ value: "Ivano-Frankivska", label: "Івано-Франківська" },
+		{ value: "Kyivska", label: "Київська" },
+		{ value: "Kirovohradska", label: "Кіровоградська" },
+		{ value: "Luhanska", label: "Луганська" },
+		{ value: "Lvivska", label: "Львівська" },
+		{ value: "Mykolaivska", label: "Миколаївська" },
+		{ value: "Odeska", label: "Одеська" },
+		{ value: "Poltavska", label: "Полтавська" },
+		{ value: "Rivnenska", label: "Рівненська" },
+		{ value: "Sumska", label: "Сумська" },
+		{ value: "Ternopilska", label: "Тернопільська" },
+		{ value: "Kharkivska", label: "Харківська" },
+		{ value: "Khersonska", label: "Херсонська" },
+		{ value: "Khmelnytska", label: "Хмельницька" },
+		{ value: "Cherkaska", label: "Черкаська" },
+		{ value: "Chernivetska", label: "Чернівецька" },
+		{ value: "Chernihivska", label: "Чернігівська" },
+	];
 	return (
-		
-			<Select
-				value={value}
-				onChange={onChange}
-				options={options}
-				styles={customStyles}
-				placeholder='Вкажіть область проживання'
-			/>
-	
+		<Select
+			value={value}
+			onChange={onChange}
+			options={regionOptions}
+			styles={customStyles}
+			placeholder='Вкажіть область проживання'
+		/>
 	);
 };
 

@@ -4,6 +4,8 @@ import { Formik, Form, Field } from "formik";
 import validationFullNameAndPhoneNumber from "../../../../helpers/schema/validationFullNameAndPhoneNumber";
 import sprite from "../../../../assets/svg/sprite.svg";
 import ButtonMain from "../../ButtonMain/ButtonMain";
+import { messagePartnerFormFormatter } from "../../../../helpers/utils/messagePartnerFormFormatter";
+import { sendEmail } from "../../../../api/messageSender";
 
 const PartnerForm = ({ modalClose }) => {
 	const validationSchema = validationFullNameAndPhoneNumber;
@@ -20,6 +22,9 @@ const PartnerForm = ({ modalClose }) => {
 				}}
 				onSubmit={(values, { resetForm }) => {
 					console.log("form", values);
+					const message = messagePartnerFormFormatter(values);
+					console.log(message);
+					sendEmail(message, "Я хочу стати партнером");
 					resetForm();
 					modalClose();
 				}}>
