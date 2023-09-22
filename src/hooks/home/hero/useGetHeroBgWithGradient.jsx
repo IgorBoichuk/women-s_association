@@ -62,4 +62,6 @@ export const useGetBgWithGradient = () => {
 	}, [isSmallScreen, isMediumScreen, isLargeScreen, heroBgURL]);
 
 	return { bgWithGradient, loading };
+	
 };
+
