@@ -129,6 +129,7 @@ const PartnerForm = ({ modalClose }) => {
 								) : (
 									<div className={style.notChecked}></div>
 								)}
+								
 								<span className={style.checkBoxDescription}>
 									гуманітарна допомога
 								</span>
