@@ -39,15 +39,18 @@
 .navItem {
   padding: 12px 4px 12px 4px;
   box-sizing: border-box;
-  border-bottom: 2px solid transparent;
+
   &:hover {
-    padding-bottom: 12px;
-    padding-top: 8px;
-    border-bottom: 2px solid $blue_bright;
+    // padding-bottom: 12px;
+    // padding-top: 8px;
+    border-bottom: 3px solid $blue_bright;
   }
 }
 
 .navLink {
   text-decoration: none;
   color: $black;
+  &:hover {
+    // border-bottom: 2px solid $blue_bright;
+  }
 }

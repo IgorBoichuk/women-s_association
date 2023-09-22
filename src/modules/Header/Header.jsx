@@ -11,6 +11,7 @@ import SkeletonCustom from "../shared/Skeleton/SkeletonCustom/SkeletonCustom";
 import { useModal } from "../../hooks/useModal";
 import { NavModal } from "../shared/NavModal/NavModal";
 import { SocialNetworkIcon } from "../shared/SocialLinks/SocialNetworkIcon";
+import ButtonMain from "../shared/ButtonMain/ButtonMain";
 
 export const Header = () => {
   const { button, loadingButton } = useGetButtonText();
@@ -37,7 +38,13 @@ export const Header = () => {
           </div>
           {loadingButton && <SkeletonCustom />}
           {!loadingButton && button && (
-            <button className={style.button}>{button.text}</button>
+            <ButtonMain
+              color={"yellow"}
+              maxW={"150px"}
+              className={style.button}
+            >
+              {button.text}
+            </ButtonMain>
           )}
           <button className={style.burgerBtn} onClick={toggle}>
             <svg className={style.menuBtn} width="24" height="24">
