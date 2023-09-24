@@ -4,7 +4,7 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 5;
+  z-index: 11;
   background-color: $white;
   padding: 16px 0;
 
@@ -41,18 +41,6 @@
   }
 }
 
-// .button {
-//   border: none;
-//   padding: 10px 20px;
-//   border-radius: 100px;
-//   background-color: $gold;
-//   &:hover {
-//     background-color: $blue;
-//     color: $white;
-//     cursor: pointer;
-//   }
-// }
-
 .langSwitcher {
   display: none;
   @include desktop {
@@ -64,26 +52,21 @@
   position: relative;
   width: 20px;
   height: 20px;
-}
-
-.burgerBtn {
-  position: relative;
-  border: none;
-  background-color: transparent;
   @include tabletHorizontal {
     display: none;
   }
 }
 
-.menuBtn {
-  fill: $black;
-  display: block;
+.burgerBtn {
+  position: absolute;
+  z-index: 120;
+  border: none;
+  background-color: transparent;
 }
 
-.closeBtn {
+.menuBtn {
   position: absolute;
-  z-index: 9;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%);
+  z-index: 120;
+  fill: $black;
+  display: block;
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import style from "./Invitation.module.scss";
-import ButtonMain from "../../shared/ButtonMain/ButtonMain";
 import { Container } from "../../shared/Container/Container";
 import { useGetInvitationContent } from "../../../hooks/home/invitations/useGetInvitationContent";
+import { LinkAsButton } from "../../shared/LinkAsButton/LinkAsButton";
 
 export const Invitation = () => {
   const { invitation, loadingInvitation } = useGetInvitationContent();
@@ -15,7 +15,10 @@ export const Invitation = () => {
             <h3 className={style.title}>{invitation.title}</h3>
             <div className={style.descriptionWrapper}>
               <p className={style.description}>{invitation.invitation}</p>
-              <ButtonMain>{invitation.button}</ButtonMain>
+              {/* <ButtonMain color="yellow">{invitation.button}</ButtonMain> */}
+              <LinkAsButton link="https://docs.google.com/forms/d/e/1FAIpQLSdDZbEhPkZONSZYBz8UD8dcARY_3gLUTOnF3w5GXzDWdT5idA/viewform">
+                {invitation.button}
+              </LinkAsButton>
             </div>
           </div>
         )}

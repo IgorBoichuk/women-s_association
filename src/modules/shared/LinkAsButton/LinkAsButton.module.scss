@@ -1,0 +1,84 @@
+@import "../../../sass/variables.scss";
+@import "../../../sass/mixin.scss";
+
+.buttonYellow {
+  text-decoration: none;
+  font-family: Mariupol;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%; /* 21px */
+  color: $black;
+
+  padding: 16px 24px;
+  display: flex;
+  width: 10%;
+  min-width: max-content;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  font-weight: 500;
+  line-height: 150%;
+  border: none;
+  background-color: $gold;
+  color: $black;
+  transition: all $hoverAnimation;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $blue;
+    color: $white;
+  }
+
+  @include tablet {
+    font-size: 16px;
+  }
+  @include tabletHorizontal {
+  }
+  @include desktop {
+    font-size: 20px;
+  }
+}
+
+.buttonTransparent {
+  text-decoration: none;
+  font-family: Mariupol;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%; /* 21px */
+  color: $black;
+
+  padding: 16px 24px;
+  display: flex;
+  box-sizing: border-box;
+  width: 30%;
+  min-width: max-content;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  font-weight: 500;
+  line-height: 150%;
+  border: 1px solid $blue;
+  background-color: $white;
+  color: $black;
+  transition: all $hoverAnimation;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $blue;
+    color: $white;
+  }
+
+  @include tablet {
+    padding: 24px 32px;
+    font-size: 16px;
+  }
+  @include tabletHorizontal {
+    // padding: 26px 32px;
+  }
+  @include desktop {
+    padding: 32px;
+    font-size: 20px;
+  }
+}

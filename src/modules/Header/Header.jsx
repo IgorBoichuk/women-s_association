@@ -11,7 +11,8 @@ import SkeletonCustom from "../shared/Skeleton/SkeletonCustom/SkeletonCustom";
 import { useModal } from "../../hooks/useModal";
 import { NavModal } from "../shared/NavModal/NavModal";
 import { SocialNetworkIcon } from "../shared/SocialLinks/SocialNetworkIcon";
-import ButtonMain from "../shared/ButtonMain/ButtonMain";
+import { LinkAsButton } from "../shared/LinkAsButton/LinkAsButton";
+import { AnimatePresence } from "framer-motion";
 
 export const Header = () => {
   const { button, loadingButton } = useGetButtonText();
@@ -38,24 +39,24 @@ export const Header = () => {
           </div>
           {loadingButton && <SkeletonCustom />}
           {!loadingButton && button && (
-            <ButtonMain
-              color={"yellow"}
-              maxW={"150px"}
-              className={style.button}
-            >
+            <LinkAsButton link="https://www.liqpay.ua/">
               {button.text}
-            </ButtonMain>
+            </LinkAsButton>
           )}
-          <button className={style.burgerBtn} onClick={toggle}>
-            <svg className={style.menuBtn} width="24" height="24">
-              <use xlinkHref={`${sprite}#menu`}></use>
-            </svg>
-          </button>
+          <div className={style.burgerBtnWrapper}>
+            <button className={style.burgerBtn} onClick={toggle}>
+              <svg className={style.menuBtn} width="24" height="24">
+                <use xlinkHref={`${sprite}#${isOpen ? "close" : "menu"}`}></use>
+              </svg>
+            </button>
+          </div>
           <div className={style.langSwitcher}>
             {!loadingButton && <LanguageSwitcher />}
           </div>
         </div>
-        {isOpen && <NavModal close={toggle} />}
+        <AnimatePresence>
+          {isOpen && <NavModal close={toggle} />}
+        </AnimatePresence>
       </Container>
     </header>
   );

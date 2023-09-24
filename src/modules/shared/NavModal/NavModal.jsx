@@ -5,6 +5,8 @@ import ButtonMain from "../ButtonMain/ButtonMain";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 import ReactDOM from "react-dom";
 import { useCallback, useEffect } from "react";
+import { motion } from "framer-motion";
+import { fromRigth } from "../../../animations/modalAnimation";
 const modalRootElement = document.querySelector("#modal");
 
 export const NavModal = ({ close }) => {
@@ -29,7 +31,13 @@ export const NavModal = ({ close }) => {
 
   return ReactDOM.createPortal(
     <div className={style.modalOverlay} onClick={handleOnDropClose}>
-      <div className={style.modal}>
+      <motion.div
+        variants={fromRigth}
+        initial="hidden"
+        exit="exit"
+        whileInView="visible"
+        className={style.modal}
+      >
         <SocialNetworkIcon socialNetwork="facebook" width="46" height="46" />
         <div className={style.navMenu}>
           <Navigation modal close={close} />
@@ -38,7 +46,7 @@ export const NavModal = ({ close }) => {
         <div className={style.languageSwitcher}>
           <LanguageSwitcher modal />
         </div>
-      </div>
+      </motion.div>
     </div>,
     modalRootElement
   );
